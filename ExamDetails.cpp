@@ -8,6 +8,6 @@ namespace mtm {
         string zoom_link;
         
         public:
-            das
+            
     };
 }
