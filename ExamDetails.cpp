@@ -1,0 +1,5 @@
+namespace mtm {
+    class ExamDetails {
+
+    };
+}
