@@ -1,4 +1,5 @@
 namespace mtm {
+
     typedef int T;  
 
     struct Node {
@@ -11,7 +12,7 @@ namespace mtm {
         T data;
         SortedList* nextNode;
 
-    public:
+        public:
         explicit SortedList();
         ~SortedList();
         SortedList(const SortedList& s);
@@ -28,15 +29,18 @@ namespace mtm {
     
     template <class T>
     SortedList<T>::~SortedList() {
-        delete[] data;
+        //delete data
     }
 
     template <class T>
-    SortedList<T>::SortedList(const SortedList<T>& s) :
-        data(new T[s.size]), size(s.size), nextIndex(s.nextIndex) {
-        for (int i = 0; i < nextIndex; ++i) {
-            data[i] = s.data[i];
+    SortedList<T>::SortedList(const SortedList<T>& s) :{
+        SortedList newSortedList;
+        SortedList* ptr = s;
+        while(!ptr){
+            newSortedList.insert(ptr->data);
+            ptr=ptr->nextNode;
         }
+        return newSortedList;
     }
 
     template <class T>
@@ -44,13 +48,12 @@ namespace mtm {
 	if (this == &s) {
 		return *this;
 	}
-	delete[] data;
-	data = new T[s.size];
-	size = s.size;
-	nextIndex = s.nextIndex;
-	for (int i = 0; i < nextIndex; ++i) {
-		data[i] = s.data[i];
-	}
+	// delete old data
+    SortedList* ptr = s;
+    while(!ptr){
+        this.insert(ptr->data);
+        ptr=ptr->nextNode;
+    }
 	return *this;
     }
 
@@ -74,8 +77,9 @@ namespace mtm {
     int SortedList<T>::length() const {
         int size=0;
         SortedList* ptr = this;
-        while(!ptr++){
+        while(!ptr){
             size++;
+            ptr=ptr->nextNode;
         }
         return size;
     }
