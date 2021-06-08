@@ -101,13 +101,15 @@ namespace mtm{
     template <class T>
     void SortedList<T>::insert(const T& t) {
         Node<T>* new_node = Node(t);
-        Node<T>* ptr=this->head_node;
-        if(!ptr){
-            ptr->setNext(new_node);
+        Node<T>* ptr=head_node;
+        if (!ptr || t < ptr->getData())
+        {
+            new_node->setNext(ptr);
+            head_node=new_node;
         }
-        Node<T>* ptr_next=ptr->getNext();
-        while(ptr_next){
-            if(t < ptr->getData())
+        
+        while(ptr->getNext){
+            if(t < ptr->getNext()->getData())
             this->head_node->setNext(new_node);
         }
         ptr->setNext(new_node);
