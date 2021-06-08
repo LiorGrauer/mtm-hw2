@@ -122,6 +122,33 @@ Exam_exe/fast:
 	$(MAKE) -f CMakeFiles\Exam_exe.dir\build.make CMakeFiles/Exam_exe.dir/build
 .PHONY : Exam_exe/fast
 
+examDetails.obj: examDetails.cpp.obj
+
+.PHONY : examDetails.obj
+
+# target to build an object file
+examDetails.cpp.obj:
+	$(MAKE) -f CMakeFiles\Exam_exe.dir\build.make CMakeFiles/Exam_exe.dir/examDetails.cpp.obj
+.PHONY : examDetails.cpp.obj
+
+examDetails.i: examDetails.cpp.i
+
+.PHONY : examDetails.i
+
+# target to preprocess a source file
+examDetails.cpp.i:
+	$(MAKE) -f CMakeFiles\Exam_exe.dir\build.make CMakeFiles/Exam_exe.dir/examDetails.cpp.i
+.PHONY : examDetails.cpp.i
+
+examDetails.s: examDetails.cpp.s
+
+.PHONY : examDetails.s
+
+# target to generate assembly for a file
+examDetails.cpp.s:
+	$(MAKE) -f CMakeFiles\Exam_exe.dir\build.make CMakeFiles/Exam_exe.dir/examDetails.cpp.s
+.PHONY : examDetails.cpp.s
+
 part_a_test.obj: part_a_test.cpp.obj
 
 .PHONY : part_a_test.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Exam_exe
 	@echo ... edit_cache
+	@echo ... examDetails.obj
+	@echo ... examDetails.i
+	@echo ... examDetails.s
 	@echo ... part_a_test.obj
 	@echo ... part_a_test.i
 	@echo ... part_a_test.s
