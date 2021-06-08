@@ -54,7 +54,7 @@ int main()
         cout << "invalid date" << endl;
     }
 
-
+    /*
     TEST("1.5")
     SortedList<string> lst1 = SortedList<string>();
     lst1.insert("Charlie");
@@ -89,6 +89,6 @@ int main()
     printList(lst2);
     cout << "----------" << endl;
     printList(lst4);
-
+    */
     return 0;
 }

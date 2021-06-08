@@ -14,12 +14,12 @@ namespace mtm {
             ~ExamDetails();
             ExamDetails(const ExamDetails& exam);
             ExamDetails& operator=(const ExamDetails& exam);
-            std::string getLink();
+            std::string getLink() const;
             void setLink(std::string link);
-            int operator-(const ExamDetails& exam);
-            bool operator<(const ExamDetails& exam);
+            int operator-(const ExamDetails& exam) const;
+            bool operator<(const ExamDetails& exam) const;
             friend ostream& operator<<(ostream& os, const ExamDetails& exam);
-            ExamDetails makeMatamExam();
+            static ExamDetails makeMatamExam();
 
             class InvalidDateException {};
             class InvalidTimeException {};
@@ -71,7 +71,7 @@ namespace mtm {
         return *this;
     }
 
-    string ExamDetails::getLink(){
+    string ExamDetails::getLink() const{
         return link;
     }
 
@@ -80,11 +80,11 @@ namespace mtm {
         //should i use old link destructor??
     }
 
-    int ExamDetails::operator-(const ExamDetails& exam){
+    int ExamDetails::operator-(const ExamDetails& exam) const{
         return 30*(month - exam.month) + (day - exam.day);  
     }
 
-    bool ExamDetails::operator<(const ExamDetails& exam){
+    bool ExamDetails::operator<(const ExamDetails& exam) const{
         return (month < exam.month) || (month == exam.month && day < exam.day);
     }
 
