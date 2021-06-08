@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/examDetails.cpp
+iostream
+-
+fstream
+-
+examDetails.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/examDetails.h
+
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/examDetails.h
 iostream
 -

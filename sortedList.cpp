@@ -45,11 +45,25 @@ namespace mtm{
         public:
         explicit SortedList();
         ~SortedList();
-        SortedList(const SortedList& s);
-        SortedList& operator=(const SortedList&);
+        SortedList(const SortedList<T>& s);
+        SortedList<T>& operator=(const SortedList<T>&);
         void insert(const T& t);
         void remove();
         int length() const;
+        class const_iterator;
+    };
+
+    template <class T>
+    class SortedList<T>::const_iterator {
+        Node<T>* ptr;
+        explicit SortedList::const_iterator();
+
+        public:
+        ~SortedList::const_iterator();
+        SortedList::const_iterator& operator=(const SortedList::const_iterator& iter);
+        void operator++();
+        bool operator==(const SortedList::const_iterator& iter) const;
+        const Node<T>& operator*(const SortedList::const_iterator& iter) const;
     };
 
     template <class T>
@@ -103,5 +117,34 @@ namespace mtm{
     int SortedList<T>::length() const {
         return size;
     }
+
+
+    //SortedList::const_iterator
+
+    template <class T>
+    SortedList<T>::const_iterator<T>::const_iterator() :
+        ptr(NULL) {
+    }
+
+    ~SortedList::const_iterator(){
+    }
+
+    SortedList::const_iterator& operator=(const SortedList::const_iterator& iter){
+        if (this == &iter) {
+            return *this;
+        }
+        ptr = iter.ptr;
+        return *this;
+    }
+
+    void operator++(){
+        if (!*ptr.next_node){
+            throw std::out_of_range();
+        }
+        ptr = *ptr.next_node;
+    }
+
+    bool operator==(const SortedList::const_iterator& iter) const;
+    const Node<T>& operator*(const SortedList::const_iterator& iter) const;
 
 }
