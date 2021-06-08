@@ -28,11 +28,6 @@ namespace mtm {
         }
     }
 
-    //**************
-    //should i writh this?
-    ExamDetails::~ExamDetails(){        
-    }
-
     ExamDetails::ExamDetails(const ExamDetails& exam):
         course_number(exam.course_number), 
         month(exam.month), 
