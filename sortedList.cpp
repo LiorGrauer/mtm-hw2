@@ -153,7 +153,7 @@ namespace mtm{
 
     void SortedList<T>::const_iterator::operator++(){
         if (!(ptr->getNext())){
-            throw std::out_of_range();
+            throw std::out_of_range;
         }
         ptr = ptr->getNext();
     }
