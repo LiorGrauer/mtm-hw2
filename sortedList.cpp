@@ -40,7 +40,7 @@ namespace mtm{
 
     template <class T>
     class SortedList {
-        Node* head_node;
+        Node<T>* head_node;
         int size;
         const_iterator iterator;
 
@@ -79,7 +79,7 @@ namespace mtm{
         Node<T>* ptr = s;
         while(!ptr){
             new_sorted_list.insert(ptr->getData);
-            ptr=ptr->getNext;
+            ptr=ptr->getNext();
         }
         return new_sorted_list;
     }
@@ -92,8 +92,8 @@ namespace mtm{
         head_node = NULL;
         Node<T>* ptr = s;
         while(!ptr){
-            this->insert(ptr->getData);
-            ptr=ptr->getNext;
+            this->insert(ptr->getData());
+            ptr=ptr->getNext();
         }
         return *this;
     }
@@ -103,14 +103,14 @@ namespace mtm{
         Node<T>* new_node = Node(t);
         Node<T>* ptr=this->head_node;
         if(!ptr){
-            ptr->next_node=new_node;
+            ptr->setNext(new_node);
         }
-        Node<T>* ptr_next=(this->head_node).getNext();
+        Node<T>* ptr_next=ptr->getNext();
         while(ptr_next){
-            if(t < ptr->getData)
-            this->head_node=new_node;
+            if(t < ptr->getData())
+            this->head_node->setNext(new_node);
         }
-        ptr->next_node=new_node;
+        ptr->setNext(new_node);
         size++;
     }
 
