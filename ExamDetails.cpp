@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 using std::string;
-using std::endl;
 using std::ostream;
 
 namespace mtm {
@@ -27,7 +26,7 @@ namespace mtm {
             class InvalidArgsException {};
     };
 
-    ExamDetails::ExamDetails(int course_number, int month, int day, double hour, int length, string link = ""):
+    ExamDetails::ExamDetails(int course_number, int month, int day, double hour, int length, string link):
         course_number(course_number), 
         month(month), 
         day(day), 
@@ -90,9 +89,9 @@ namespace mtm {
     }
 
     ostream& operator<<(ostream& os, const ExamDetails& exam){
-        return (os << "Corse number: " << exam.course_number << endl << "Time: " << exam.day << "." << exam.month
-                << " at " << (int)exam.hour << ":" << (exam.hour - (int)exam.hour < 1e-6)? "00" : "30" << endl 
-                << "Duration: " << exam.length << ":00" << endl << "Zoom Link: " << exam.link);
+        return (os << "Corse number: " << exam.course_number << std::endl << "Time: " << exam.day << "." << exam.month
+                << " at " << (int)exam.hour << ":" << ((exam.hour - (int)exam.hour < 1e-6)? "00" : "30") << std::endl 
+                << "Duration: " << exam.length << ":00" << std::endl << "Zoom Link: " << exam.link);
     }
 
     ExamDetails ExamDetails::makeMatamExam(){
