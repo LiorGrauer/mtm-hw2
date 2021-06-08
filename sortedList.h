@@ -1,18 +1,25 @@
 
 
-namespace mtm {
+namespace mtm{
 
     typedef int T;  
 
-    struct Node {
+    template <class T>
+
+    class Node {
         T data;
-        Node* NextNode;
+        Node* next_node;
+
+        public:
+        T getData;
+        Node* getNext;
+        void SetData;
+        void getData;
     };
 
     template <class T>
     class SortedList {
-        T data;
-        SortedList* nextNode;
+        Node* head_node;
 
         public:
         explicit SortedList();
@@ -36,10 +43,10 @@ namespace mtm {
 
     template <class T>
     SortedList<T>::SortedList(const SortedList<T>& s) :{
-        SortedList newSortedList;
+        SortedList new_sorted_list;
         SortedList* ptr = s;
         while(!ptr){
-            newSortedList.insert(ptr->data);
+            new_sorted_list.insert(ptr->data);
             ptr=ptr->nextNode;
         }
         return newSortedList;
