@@ -11,6 +11,7 @@ namespace mtm{
 
         public:
         explicit Node(const T& data);
+        ~Node() = default;
         T getData() const;
         Node* getNext() const;
         void setNext(const Node* ptr);
@@ -41,10 +42,11 @@ namespace mtm{
     class SortedList {
         Node* head_node;
         int size;
+        const_iterator iterator;
 
         public:
         explicit SortedList();
-        ~SortedList();
+        ~SortedList() = default();
         SortedList(const SortedList<T>& s);
         SortedList<T>& operator=(const SortedList<T>&);
         void insert(const T& t);
@@ -69,10 +71,6 @@ namespace mtm{
     template <class T>
     SortedList<T>::SortedList() :
         head(NULL), size(0) {
-    }
-    
-    template <class T>
-    SortedList<T>::~SortedList() {
     }
 
     template <class T>
@@ -102,22 +100,18 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::insert(const T& t) {
-        Node* new_node = new Node(t);
-        //Map_node current_node = map -> head_node;
-        MapDataElement data_copy= map->copyDataElement(dataElement);
-        MapKeyElement key_copy= map->copyKeyElement(keyElement);
-        if(mapContains(map,key_copy)) {
-            while (current_node) {
-                if (map->compareKeyElements(nodeGetKey(current_node),key_copy) == 0)
-                {
-                    map->freeDataElement(nodeGetData(current_node));
-                    map->freeKeyElement(key_copy);
-                    nodeSetData(current_node,data_copy);
-                }
-                current_node= nodeGetNext(current_node);
-            }
-        size++;
+        Node<T>* new_node = Node(t);
+        Node<T>* ptr=this->head_node;
+        if(!ptr){
+            ptr->next_node=new_node;
         }
+        Node<T>* ptr_next=(this->head_node).getNext();
+        while(ptr_next){
+            if(t < ptr->getData)
+            this->head_node=new_node;
+        }
+        ptr->next_node=new_node;
+        size++;
     }
 
     template <class T>
