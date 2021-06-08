@@ -88,32 +88,32 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::insert(const T& t) {
-    Node* new_node = new Node(t);
-    //Map_node current_node = map -> head_node;
-    MapDataElement data_copy= map->copyDataElement(dataElement);
-    MapKeyElement key_copy= map->copyKeyElement(keyElement);
-    if(mapContains(map,key_copy)) {
-        while (current_node) {
-            if (map->compareKeyElements(nodeGetKey(current_node),key_copy) == 0)
-            {
-                map->freeDataElement(nodeGetData(current_node));
-                map->freeKeyElement(key_copy);
-                nodeSetData(current_node,data_copy);
+        Node* new_node = new Node(t);
+        //Map_node current_node = map -> head_node;
+        MapDataElement data_copy= map->copyDataElement(dataElement);
+        MapKeyElement key_copy= map->copyKeyElement(keyElement);
+        if(mapContains(map,key_copy)) {
+            while (current_node) {
+                if (map->compareKeyElements(nodeGetKey(current_node),key_copy) == 0)
+                {
+                    map->freeDataElement(nodeGetData(current_node));
+                    map->freeKeyElement(key_copy);
+                    nodeSetData(current_node,data_copy);
+                }
+                current_node= nodeGetNext(current_node);
             }
-            current_node= nodeGetNext(current_node);
+        size++;
         }
-    size++;
-    }
 
-    template <class T>
-    void SortedList<T>::remove() {
-        
-        size--;
-    }
+        template <class T>
+        void SortedList<T>::remove() {
+            
+            size--;
+        }
 
-    template <class T>
-    int SortedList<T>::length() const {
-        return size;
+        template <class T>
+        int SortedList<T>::length() const {
+            return size;
+        }
     }
-
 }
