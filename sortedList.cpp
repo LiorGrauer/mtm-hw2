@@ -28,7 +28,8 @@ namespace mtm{
 
     template <class T>
     void Node<T>::setData(const T& t){
-        this->data = t;
+        T copy=t;
+        this->data = copy&;
     }
     
     template <class T>
@@ -52,24 +53,24 @@ namespace mtm{
     };
 
     template <class T>
-    SortedList<T>::SortedList() : {
-        Node* head = NULL;
+    SortedList<T>::SortedList() :
+        head(NULL), size(0) {
     }
     
     template <class T>
     SortedList<T>::~SortedList() {
-        //delete data
+        
     }
 
     template <class T>
     SortedList<T>::SortedList(const SortedList<T>& s) :{
-        SortedList new_sorted_list;
-        SortedList* ptr = s;
+        SortedList<T> new_sorted_list;
+        Node<T>* ptr = s;
         while(!ptr){
-            new_sorted_list.insert(ptr->data);
-            ptr=ptr->nextNode;
+            new_sorted_list.insert(ptr->getData);
+            ptr=ptr->getNext;
         }
-        return newSortedList;
+        return new_sorted_list;
     }
 
     template <class T>
@@ -78,10 +79,10 @@ namespace mtm{
             return *this;
         }
         // delete old data
-        SortedList* ptr = s;
+        Node<T>* ptr = s;
         while(!ptr){
-            this.insert(ptr->data);
-            ptr=ptr->nextNode;
+            this->insert(ptr->getData);
+            ptr=ptr->getNext;
         }
         return *this;
     }
@@ -94,20 +95,12 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::remove() {
-        if (nextIndex <= 0) {
-            error("SortedList empty");
-        }
+        
         size--;
     }
 
     template <class T>
     int SortedList<T>::length() const {
-        int size=0;
-        SortedList* ptr = this;
-        while(!ptr){
-            size++;
-            ptr=ptr->nextNode;
-        }
         return size;
     }
 
