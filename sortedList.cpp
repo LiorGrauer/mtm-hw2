@@ -7,34 +7,34 @@ namespace mtm{
     template <class T>
     class Node {
         T data;
-        Node* next_node;
+        Node<T>* next_node;
 
         public:
+        explicit Node(const T& data);
         T getData() const;
         Node* getNext() const;
-        void setData(const T& t);
         void setNext(const Node* ptr);
     };
 
     template <class T>
+    Node<T>::Node(const T& data) :
+        data(data), next_node(NULL) {
+
+    }
+
+    template <class T>
     T Node<T>::getData() const{
-        return this->data;
+        return data;
     }
     
     template <class T>
     Node<T>* Node<T>::getNext() const{
-        return this->next_node;
-    }
-
-    template <class T>
-    void Node<T>::setData(const T& t){
-        T copy=t;
-        this->data = copy&;
+        return next_node;
     }
     
     template <class T>
     void Node<T>::setNext(const Node* ptr){
-        this->next_node = ptr;
+        next_node = ptr;
     }
 
     template <class T>
@@ -59,7 +59,6 @@ namespace mtm{
     
     template <class T>
     SortedList<T>::~SortedList() {
-        
     }
 
     template <class T>
@@ -78,7 +77,7 @@ namespace mtm{
         if (this == &s) {
             return *this;
         }
-        // delete old data
+        head_node = NULL;
         Node<T>* ptr = s;
         while(!ptr){
             this->insert(ptr->getData);
@@ -89,8 +88,21 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::insert(const T& t) {
-        //add
-        size++;
+    Node* new_node = new Node(t);
+    //Map_node current_node = map -> head_node;
+    MapDataElement data_copy= map->copyDataElement(dataElement);
+    MapKeyElement key_copy= map->copyKeyElement(keyElement);
+    if(mapContains(map,key_copy)) {
+        while (current_node) {
+            if (map->compareKeyElements(nodeGetKey(current_node),key_copy) == 0)
+            {
+                map->freeDataElement(nodeGetData(current_node));
+                map->freeKeyElement(key_copy);
+                nodeSetData(current_node,data_copy);
+            }
+            current_node= nodeGetNext(current_node);
+        }
+    size++;
     }
 
     template <class T>
