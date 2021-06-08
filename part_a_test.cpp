@@ -2,7 +2,7 @@
 // Created by ittay on 3/9/2021.
 //
 #include <iostream>
-#include "sortedList.h"
+//#include "sortedList.h"
 #include "examDetails.h"
 
 using std::cout;
@@ -20,7 +20,7 @@ string getLen(string str)
 bool isTrollLink(const ExamDetails& exam) {
     return (exam.getLink().find("tinyurl") != string::npos);
 }
-
+/*
 template<class T>
 void printList(SortedList<T> list) {
     for (auto it = list.begin(); !(it == list.end()); ++it) {
@@ -28,7 +28,7 @@ void printList(SortedList<T> list) {
     }
     cout << endl;
 }
-
+*/
 int main()
 {
     TEST("1.1")
@@ -54,7 +54,7 @@ int main()
         cout << "invalid date" << endl;
     }
 
-
+    /*
     TEST("1.5")
     SortedList<string> lst1 = SortedList<string>();
     lst1.insert("Charlie");
@@ -89,6 +89,6 @@ int main()
     printList(lst2);
     cout << "----------" << endl;
     printList(lst4);
-
+    */
     return 0;
 }

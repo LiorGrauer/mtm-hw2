@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 using std::string;
-using std::endl;
 using std::ostream;
 
 namespace mtm {
@@ -15,23 +14,24 @@ namespace mtm {
             ~ExamDetails();
             ExamDetails(const ExamDetails& exam);
             ExamDetails& operator=(const ExamDetails& exam);
-            std::string getLink();
+            std::string getLink() const;
             void setLink(std::string link);
-            int operator-(const ExamDetails& exam);
-            bool operator<(const ExamDetails& exam);
+            int operator-(const ExamDetails& exam) const;
+            bool operator<(const ExamDetails& exam) const;
             friend ostream& operator<<(ostream& os, const ExamDetails& exam);
-            ExamDetails makeMatamExam();
+            static ExamDetails makeMatamExam();
 
             class InvalidDateException {};
             class InvalidTimeException {};
             class InvalidArgsException {};
     };
 
-    ExamDetails::ExamDetails(int course_number, int month, int day, double hour, int length, string link = ""):
+    ExamDetails::ExamDetails(int course_number, int month, int day, double hour, int length, string link):
         course_number(course_number), 
         month(month), 
         day(day), 
         hour(hour), 
+        length(length),
         link(link) {
         if (course_number < 1){
             throw ExamDetails::InvalidArgsException();
@@ -42,7 +42,7 @@ namespace mtm {
         if (day < 1 || day > 30){
             throw ExamDetails::InvalidDateException();
         }
-        if (hour - (int)hour > 1e-6 || hour - 0.5 - (int)hour > 1e-6){
+        if (hour - (int)hour > 1e-6 && hour - 0.5 - (int)hour > 1e-6){
             throw ExamDetails::InvalidTimeException();
         }
     }
@@ -57,6 +57,7 @@ namespace mtm {
         month(exam.month), 
         day(exam.day), 
         hour(exam.hour), 
+        length(exam.length),
         link(exam.link) {
     }
 
@@ -68,11 +69,12 @@ namespace mtm {
         month = exam.month; 
         day = exam.day;
         hour = exam.hour; 
+        length = exam.length;
         link = exam.link; 
         return *this;
     }
 
-    string ExamDetails::getLink(){
+    string ExamDetails::getLink() const{
         return link;
     }
 
@@ -81,18 +83,18 @@ namespace mtm {
         //should i use old link destructor??
     }
 
-    int ExamDetails::operator-(const ExamDetails& exam){
+    int ExamDetails::operator-(const ExamDetails& exam) const{
         return 30*(month - exam.month) + (day - exam.day);  
     }
 
-    bool ExamDetails::operator<(const ExamDetails& exam){
+    bool ExamDetails::operator<(const ExamDetails& exam) const{
         return (month < exam.month) || (month == exam.month && day < exam.day);
     }
 
     ostream& operator<<(ostream& os, const ExamDetails& exam){
-        return (os << "Corse number: " << exam.course_number << endl << "Time: " << exam.day << "." << exam.month
-                << " at " << (int)exam.hour << ":" << (exam.hour - (int)exam.hour < 1e-6)? "00" : "30" << endl 
-                << "Duration: " << exam.length << ":00" << endl << "Zoom Link: " << exam.link);
+        return (os << "Corse number: " << exam.course_number << std::endl << "Time: " << exam.day << "." << exam.month
+                << " at " << (int)exam.hour << ":" << ((exam.hour - (int)exam.hour < 1e-6)? "00" : "30") << std::endl 
+                << "Duration: " << exam.length << ":00" << std::endl << "Zoom Link: " << exam.link);
     }
 
     ExamDetails ExamDetails::makeMatamExam(){
