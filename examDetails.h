@@ -31,6 +31,7 @@ namespace mtm {
         month(month), 
         day(day), 
         hour(hour), 
+        length(length),
         link(link) {
         if (course_number < 1){
             throw ExamDetails::InvalidArgsException();
@@ -41,7 +42,7 @@ namespace mtm {
         if (day < 1 || day > 30){
             throw ExamDetails::InvalidDateException();
         }
-        if (hour - (int)hour > 1e-6 || hour - 0.5 - (int)hour > 1e-6){
+        if (hour - (int)hour > 1e-6 && hour - 0.5 - (int)hour > 1e-6){
             throw ExamDetails::InvalidTimeException();
         }
     }
@@ -56,6 +57,7 @@ namespace mtm {
         month(exam.month), 
         day(exam.day), 
         hour(exam.hour), 
+        length(exam.length),
         link(exam.link) {
     }
 
@@ -67,6 +69,7 @@ namespace mtm {
         month = exam.month; 
         day = exam.day;
         hour = exam.hour; 
+        length = exam.length;
         link = exam.link; 
         return *this;
     }

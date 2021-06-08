@@ -3,5 +3,4 @@
 
 CMakeFiles/Exam_exe.dir/part_a_test.cpp.obj: ../examDetails.h
 CMakeFiles/Exam_exe.dir/part_a_test.cpp.obj: ../part_a_test.cpp
-CMakeFiles/Exam_exe.dir/part_a_test.cpp.obj: ../sortedList.h
 
