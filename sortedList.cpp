@@ -56,14 +56,15 @@ namespace mtm{
     template <class T>
     class SortedList<T>::const_iterator {
         Node<T>* ptr;
-        explicit SortedList::const_iterator();
+        explicit const_iterator();
 
         public:
-        ~SortedList::const_iterator();
-        SortedList::const_iterator& operator=(const SortedList::const_iterator& iter);
+        const_iterator(const const_iterator& iter);
+        ~const_iterator() = default;
+        const_iterator& operator=(const const_iterator& iter);
         void operator++();
-        bool operator==(const SortedList::const_iterator& iter) const;
-        const Node<T>& operator*(const SortedList::const_iterator& iter) const;
+        bool operator==(const const_iterator& iter) const;
+        const Node<T>& operator*(const const_iterator& iter) const;
     };
 
     template <class T>
@@ -134,14 +135,15 @@ namespace mtm{
     //SortedList::const_iterator
 
     template <class T>
-    SortedList<T>::const_iterator<T>::const_iterator() :
+    SortedList<T>::const_iterator::const_iterator() :
         ptr(NULL) {
     }
 
-    ~SortedList::const_iterator(){
+    SortedList<T>::const_iterator::const_iterator(const const_iterator& iter) : 
+        ptr(iter.ptr) {
     }
 
-    SortedList::const_iterator& operator=(const SortedList::const_iterator& iter){
+    SortedList<T>::const_iterator& SortedList<T>::const_iterator::operator=(const const_iterator& iter){
         if (this == &iter) {
             return *this;
         }
@@ -149,14 +151,18 @@ namespace mtm{
         return *this;
     }
 
-    void operator++(){
-        if (!*ptr.next_node){
+    void SortedList<T>::const_iterator::operator++(){
+        if (!(ptr->getNext())){
             throw std::out_of_range();
         }
-        ptr = *ptr.next_node;
+        ptr = ptr->getNext();
     }
 
-    bool operator==(const SortedList::const_iterator& iter) const;
-    const Node<T>& operator*(const SortedList::const_iterator& iter) const;
+    bool SortedList<T>::const_iterator::operator==(const const_iterator& iter) const{
+        return ptr == iter.ptr;
+    }
+    const Node<T>& SortedList<T>::const_iterator::operator*(const const_iterator& iter) const{
+        return *ptr;
+    }
 
 }
