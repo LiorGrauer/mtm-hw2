@@ -195,6 +195,7 @@ namespace mtm{
             iterator=iterator->getNext();
         }
     }
+
     //SortedList::const_iterator
 
     template <class T>
