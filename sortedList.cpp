@@ -40,11 +40,8 @@ namespace mtm{
 
     template <class T>
     class SortedList {
-        Node<T>* head_node;
-        int size;
-        const_iterator iterator;
-
         public:
+        class const_iterator;
         explicit SortedList();
         ~SortedList() = default();
         SortedList(const SortedList<T>& s);
@@ -52,9 +49,16 @@ namespace mtm{
         void insert(const T& t);
         void remove(const const_iterator& iter);
         int length() const;
+        template<class Condition>
+        SortedList<T> filter(Condition c) const;
         void begin();
         void end();
-        class const_iterator;
+
+        private:
+        Node<T>* head_node;
+        int size;
+        const_iterator iterator;
+        
     };
 
     template <class T>
@@ -151,6 +155,18 @@ namespace mtm{
     template <class T>
     int SortedList<T>::length() const {
         return size;
+    }
+
+    template<class T>
+    template<class Condition>
+    SortedList<T> SortedList<T>::filter(Condition c) const {
+    SortedList<T> result;
+    for (typename Set<T>::Iterator it = begin(); it != end(); ++it) {
+        if (c(*it)) {
+        result.add(*it);
+        }
+    }
+    return result;
     }
 
     template <class T>
