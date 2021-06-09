@@ -51,6 +51,8 @@ namespace mtm{
         int length() const;
         template<class Condition>
         SortedList<T> filter(Condition c) const;
+        template<class Function>
+        SortedList<T> apply(Function f) const;
         void begin();
         void end();
 
@@ -160,12 +162,22 @@ namespace mtm{
     template<class T>
     template<class Condition>
     SortedList<T> SortedList<T>::filter(Condition c) const {
-    SortedList<T> result;
-    for (typename Set<T>::Iterator it = begin(); it != end(); ++it) {
-        if (c(*it)) {
-        result.add(*it);
+        SortedList<T> result;
+        for (typename Set<T>::Iterator it = begin(); it != end(); ++it) {
+            if (c(it->getData())) {
+                result.insert(it->getData());
+            }
         }
+        return result;
     }
+    
+    template<class T>
+    template<class Function>
+    SortedList<T> SortedList<T>::apply(Function f) const {
+        SortedList<T> result;
+        for (typename Set<T>::Iterator it = begin(); it != end(); ++it) {
+            result.insert(f(it->getData()));
+        }
     return result;
     }
 
