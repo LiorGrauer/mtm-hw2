@@ -52,6 +52,8 @@ namespace mtm{
         void insert(const T& t);
         void remove(const const_iterator& iter);
         int length() const;
+        void begin();
+        void end();
         class const_iterator;
     };
 
@@ -90,6 +92,7 @@ namespace mtm{
         if (this == &s) {
             return *this;
         }
+        // delete old data
         head_node = NULL;
         Node<T>* ptr = s;
         while(!ptr){
@@ -111,21 +114,38 @@ namespace mtm{
             return;
         }
         while(ptr->getNext){
-            if(t < ptr->getNext()->getData()){}
+            if(t < ptr->getNext()->getData()){
             new_node->setNext(ptr);
             ptr->setNext(new_node);
             size++;
             return;
+            }
+            ptr->setNext(new_node);
+            size++;
         }
-        ptr->setNext(new_node);
-        size++;
     }
 
     template <class T>
-    void SortedList<T>::remove(const const_iterator& iter) 
-    {
-        
-        size--;
+    void SortedList<T>::remove(const const_iterator& iter){
+        Node<T>* ptr=head_node;
+        if(!ptr){
+            return;
+        }
+        if (iter == ptr)
+        {
+            head_node=ptr->getNext();
+            size--;
+            return;
+        }
+        while(ptr->getNext){
+            if(iter == ptr->getNext()){
+                ptr->setNext(ptr->getNext()->getNext())
+                size--;
+                return;
+            }
+            ptr->setNext(new_node);
+            size--;
+        }
     }
 
     template <class T>
@@ -133,6 +153,18 @@ namespace mtm{
         return size;
     }
 
+    template <class T>
+    void SortedList<T>::begin(){
+        iterator = head_node;
+    }
+
+    template <class T>
+    void SortedList<T>::end() {
+        iterator = head_node;
+        while(iterator->getNext()){
+            iterator=iterator->getNext();
+        }
+    }
     //SortedList::const_iterator
 
     template <class T>
