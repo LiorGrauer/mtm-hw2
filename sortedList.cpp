@@ -50,7 +50,7 @@ namespace mtm{
         SortedList(const SortedList<T>& s);
         SortedList<T>& operator=(const SortedList<T>&);
         void insert(const T& t);
-        void remove();
+        void remove(const const_iterator& iter);
         int length() const;
         class const_iterator;
     };
@@ -107,18 +107,23 @@ namespace mtm{
         {
             new_node->setNext(ptr);
             head_node=new_node;
+            size++;
+            return;
         }
-        
         while(ptr->getNext){
-            if(t < ptr->getNext()->getData())
-            this->head_node->setNext(new_node);
+            if(t < ptr->getNext()->getData()){}
+            new_node->setNext(ptr);
+            ptr->setNext(new_node);
+            size++;
+            return;
         }
         ptr->setNext(new_node);
         size++;
     }
 
     template <class T>
-    void SortedList<T>::remove() {
+    void SortedList<T>::remove(const const_iterator& iter) 
+    {
         
         size--;
     }
