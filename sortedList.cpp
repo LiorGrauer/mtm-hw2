@@ -6,6 +6,7 @@ namespace mtm{
 
     template <class T>
     class Node {
+        private:
         T data;
         Node<T>* next_node;
 
@@ -65,6 +66,7 @@ namespace mtm{
 
     template <class T>
     class SortedList<T>::const_iterator {
+        private:
         Node<T>* ptr;
         explicit const_iterator();
 
