@@ -15,7 +15,7 @@ namespace mtm{
         ~Node() = default;
         T getData() const;
         Node* getNext() const;
-        void setNext(const Node* ptr);
+        void setNext(Node* ptr);
     };
 
     template <class T>
@@ -35,7 +35,7 @@ namespace mtm{
     }
     
     template <class T>
-    void Node<T>::setNext(const Node* ptr){
+    void Node<T>::setNext(Node* ptr){
         next_node = ptr;
     }
 
@@ -44,7 +44,7 @@ namespace mtm{
         public:
             class const_iterator;
             explicit SortedList();
-            ~SortedList() = default();
+            ~SortedList() = default;
             SortedList(const SortedList<T>& s);
             SortedList<T>& operator=(const SortedList<T>&);
             void insert(const T& t);
@@ -54,8 +54,8 @@ namespace mtm{
             SortedList<T> filter(Condition c) const;
             template<class Function>
             SortedList<T> apply(Function f) const;
-            void begin();
-            void end();
+            const_iterator begin() const;
+            const_iterator end() const;
 
         private:
             Node<T>* head_node;
@@ -81,18 +81,18 @@ namespace mtm{
 
     template <class T>
     SortedList<T>::SortedList() :
-        head(NULL), size(0) {
+        head_node(NULL), 
+        size(0),
+        iterator(head_node) {
     }
 
     template <class T>
     SortedList<T>::SortedList(const SortedList<T>& s) :{
-        SortedList<T> new_sorted_list;
-        Node<T>* ptr = s;
+        Node<T>* ptr = s.head_node;
         while(!ptr){
-            new_sorted_list.insert(ptr->getData);
+            this->insert(ptr->getData());
             ptr=ptr->getNext();
         }
-        return new_sorted_list;
     }
 
     template <class T>
@@ -102,7 +102,7 @@ namespace mtm{
         }
         // delete old data
         head_node = NULL;
-        Node<T>* ptr = s;
+        Node<T>* ptr = s.head_node;
         while(!ptr){
             this->insert(ptr->getData());
             ptr=ptr->getNext();
@@ -112,23 +112,23 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::insert(const T& t) {
-        Node<T>* new_node = Node(t);
+        Node<T> new_node = Node<T>(t);
         Node<T>* ptr=head_node;
         if (!ptr || t < ptr->getData())
         {
-            new_node->setNext(ptr);
-            head_node=new_node;
+            new_node.setNext(ptr);
+            head_node=&new_node;
             size++;
             return;
         }
-        while(ptr->getNext){
+        while(ptr->getNext()){
             if(t < ptr->getNext()->getData()){
-            new_node->setNext(ptr);
-            ptr->setNext(new_node);
+            new_node.setNext(ptr);
+            ptr->setNext(&new_node);
             size++;
             return;
             }
-            ptr->setNext(new_node);
+            ptr->setNext(&new_node);
             size++;
         }
     }
@@ -145,13 +145,13 @@ namespace mtm{
             size--;
             return;
         }
-        while(ptr->getNext){
+        while(ptr->getNext()){
             if(iter == ptr->getNext()){
-                ptr->setNext(ptr->getNext()->getNext())
+                ptr->setNext(ptr->getNext()->getNext());
                 size--;
                 return;
             }
-            ptr->setNext(new_node);
+            ptr->setNext(ptr->getNext());
             size--;
         }
     }
@@ -165,7 +165,7 @@ namespace mtm{
     template<class Condition>
     SortedList<T> SortedList<T>::filter(Condition c) const {
         SortedList<T> result;
-        for (typename Set<T>::Iterator it = begin(); it != end(); ++it) {
+        for (typename SortedList<T>::Iterator it = begin(); it != end(); ++it) {
             if (c(it->getData())) {
                 result.insert(it->getData());
             }
@@ -177,23 +177,27 @@ namespace mtm{
     template<class Function>
     SortedList<T> SortedList<T>::apply(Function f) const {
         SortedList<T> result;
-        for (typename Set<T>::Iterator it = begin(); it != end(); ++it) {
+        for (typename SortedList<T>::Iterator it = begin(); it != end(); ++it) {
             result.insert(f(it->getData()));
         }
     return result;
     }
 
     template <class T>
-    void SortedList<T>::begin(){
-        iterator = head_node;
+    typename SortedList<T>::const_iterator SortedList<T>::begin() const {
+        return const_iterator(head_node);
     }
 
     template <class T>
-    void SortedList<T>::end() {
-        iterator = head_node;
-        while(iterator->getNext()){
-            iterator=iterator->getNext();
+    typename SortedList<T>::const_iterator SortedList<T>::end() const {
+        if (!head_node){
+            return const_iterator(head_node);
         }
+        Node<T>* ptr = head_node;
+        while(ptr->getNext()){
+            ptr=ptr->getNext();
+        }
+        return const_iterator(ptr);
     }
 
     //SortedList::const_iterator
@@ -209,7 +213,8 @@ namespace mtm{
     }
 
     template <class T>
-    SortedList<T>::const_iterator& SortedList<T>::const_iterator::operator=(const const_iterator& iter){
+    //why typename needed??
+    typename SortedList<T>::const_iterator& SortedList<T>::const_iterator::operator=(const const_iterator& iter){
         if (this == &iter) {
             return *this;
         }
