@@ -110,25 +110,26 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::insert(const T& t) {
-        Node<T> new_node = Node<T>(t);
+        Node<T>* new_node_ptr = new Node<T>(t);
         Node<T>* ptr=head_node;
         if (!ptr || t < ptr->getData())
         {
-            new_node.setNext(ptr);
-            head_node=&new_node;
+            new_node_ptr->setNext(ptr);
+            head_node=new_node_ptr;
             size++;
             return;
         }
         while(ptr->getNext()){
             if(t < ptr->getNext()->getData()){
-                new_node.setNext(ptr);
-                ptr->setNext(&new_node);
+                new_node_ptr->setNext(ptr);
+                ptr->setNext(new_node_ptr);
                 size++;
                 return;
             }
-            ptr->setNext(&new_node);
-            size++;
+            ptr = ptr->getNext();
         }
+        ptr->setNext(new_node_ptr);
+        size++;
     }
 
     template <class T>
