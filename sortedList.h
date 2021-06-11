@@ -68,7 +68,6 @@ namespace mtm{
             Node<T>* head_node;
             int size;
             const_iterator iterator;
-        
     };
 
     template <class T>
@@ -207,14 +206,15 @@ namespace mtm{
 
     template <class T>
     typename SortedList<T>::const_iterator SortedList<T>::end() const {
-        if (!head_node){
+        /*if (!head_node){
             return const_iterator(head_node);
         }
         Node<T>* ptr = head_node;
         while(ptr->getNext()){
             ptr=ptr->getNext();
         }
-        return const_iterator(ptr);
+        return const_iterator(ptr);*/
+        return const_iterator(nullptr);
     }
 
 #pragma endregion
@@ -233,6 +233,7 @@ namespace mtm{
             ~const_iterator() = default;
             const_iterator& operator=(const const_iterator& iter);
             const_iterator& operator++();
+            //const_iterator& operator++(int);
             bool operator==(const const_iterator& iter) const;
             const T& operator*() const;
     };
@@ -259,7 +260,7 @@ namespace mtm{
 
     template <class T>
     typename SortedList<T>::const_iterator& SortedList<T>::const_iterator::operator++(){
-        if (!(ptr->getNext())){
+        if (!ptr){
             throw std::out_of_range("out_of_range");
         }
         ptr = ptr->getNext();
