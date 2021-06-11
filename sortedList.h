@@ -2,7 +2,7 @@
 
 namespace mtm{
 
-    typedef int T;  
+    //typedef int T;  
 
     template <class T>
     class Node {
@@ -42,41 +42,41 @@ namespace mtm{
     template <class T>
     class SortedList {
         public:
-        class const_iterator;
-        explicit SortedList();
-        ~SortedList() = default();
-        SortedList(const SortedList<T>& s);
-        SortedList<T>& operator=(const SortedList<T>&);
-        void insert(const T& t);
-        void remove(const const_iterator& iter);
-        int length() const;
-        template<class Condition>
-        SortedList<T> filter(Condition c) const;
-        template<class Function>
-        SortedList<T> apply(Function f) const;
-        void begin();
-        void end();
+            class const_iterator;
+            explicit SortedList();
+            ~SortedList() = default();
+            SortedList(const SortedList<T>& s);
+            SortedList<T>& operator=(const SortedList<T>&);
+            void insert(const T& t);
+            void remove(const const_iterator& iter);
+            int length() const;
+            template<class Condition>
+            SortedList<T> filter(Condition c) const;
+            template<class Function>
+            SortedList<T> apply(Function f) const;
+            void begin();
+            void end();
 
         private:
-        Node<T>* head_node;
-        int size;
-        const_iterator iterator;
+            Node<T>* head_node;
+            int size;
+            const_iterator iterator;
         
     };
 
     template <class T>
     class SortedList<T>::const_iterator {
         private:
-        Node<T>* ptr;
-        explicit const_iterator();
+            Node<T>* ptr;
+            explicit const_iterator();
 
         public:
-        const_iterator(const const_iterator& iter);
-        ~const_iterator() = default;
-        const_iterator& operator=(const const_iterator& iter);
-        void operator++();
-        bool operator==(const const_iterator& iter) const;
-        const Node<T>& operator*(const const_iterator& iter) const;
+            const_iterator(const const_iterator& iter);
+            ~const_iterator() = default;
+            const_iterator& operator=(const const_iterator& iter);
+            void operator++();
+            bool operator==(const const_iterator& iter) const;
+            const Node<T>& operator*(const const_iterator& iter) const;
     };
 
     template <class T>
@@ -203,10 +203,12 @@ namespace mtm{
         ptr(NULL) {
     }
 
+    template <class T>
     SortedList<T>::const_iterator::const_iterator(const const_iterator& iter) : 
         ptr(iter.ptr) {
     }
 
+    template <class T>
     SortedList<T>::const_iterator& SortedList<T>::const_iterator::operator=(const const_iterator& iter){
         if (this == &iter) {
             return *this;
@@ -215,6 +217,7 @@ namespace mtm{
         return *this;
     }
 
+    template <class T>
     void SortedList<T>::const_iterator::operator++(){
         if (!(ptr->getNext())){
             throw std::out_of_range("out_of_range");
@@ -222,9 +225,12 @@ namespace mtm{
         ptr = ptr->getNext();
     }
 
+    template <class T>
     bool SortedList<T>::const_iterator::operator==(const const_iterator& iter) const{
         return ptr == iter.ptr;
     }
+
+    template <class T>
     const Node<T>& SortedList<T>::const_iterator::operator*(const const_iterator& iter) const{
         return *ptr;
     }

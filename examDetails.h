@@ -5,10 +5,11 @@
 
 namespace mtm {
     class ExamDetails {
-        int course_number, month, day, length;
-        double hour; 
-        std::string link;
-        
+        private:
+            int course_number, month, day, length;
+            double hour; 
+            std::string link;
+            
         public:
             ExamDetails(int course_number, int month, int day, double hour, int length, std::string link = "");
             ~ExamDetails() = default;
