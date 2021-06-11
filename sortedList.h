@@ -18,7 +18,7 @@ namespace mtm{
         public:
         explicit Node(const T& data);
         ~Node() = default;
-        T getData() const;
+        const T& getData() const;
         Node* getNext() const;
         void setNext(Node* ptr);
     };
@@ -30,7 +30,7 @@ namespace mtm{
     }
 
     template <class T>
-    T Node<T>::getData() const{
+    const T& Node<T>::getData() const{
         return data;
     }
     
@@ -83,10 +83,10 @@ namespace mtm{
     template <class T>
     SortedList<T>::SortedList(const SortedList<T>& s) :
         iterator (s.iterator),
-        size(s.size),
+        size(0),
         head_node(nullptr) {
         Node<T>* ptr = s.head_node;
-        while(!ptr){
+        while(ptr){
             this->insert(ptr->getData());
             ptr=ptr->getNext();
         }
@@ -216,7 +216,7 @@ namespace mtm{
             const_iterator(const const_iterator& iter);
             ~const_iterator() = default;
             const_iterator& operator=(const const_iterator& iter);
-            void operator++();
+            const_iterator& operator++();
             bool operator==(const const_iterator& iter) const;
             const T& operator*() const;
     };
@@ -242,11 +242,12 @@ namespace mtm{
     }
 
     template <class T>
-    void SortedList<T>::const_iterator::operator++(){
+    typename SortedList<T>::const_iterator& SortedList<T>::const_iterator::operator++(){
         if (!(ptr->getNext())){
             throw std::out_of_range("out_of_range");
         }
         ptr = ptr->getNext();
+        return *this;
     }
 
     template <class T>
