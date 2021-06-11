@@ -5,8 +5,6 @@
 
 namespace mtm{
 
-    //typedef int T;  
-
 #pragma region Node<T>
 
     template <class T>
@@ -53,7 +51,7 @@ namespace mtm{
         public:
             class const_iterator;
             explicit SortedList();
-            ~SortedList() = default;
+            ~SortedList();
             SortedList(const SortedList<T>& s);
             SortedList<T>& operator=(const SortedList<T>&);
             void insert(const T& t);
@@ -81,6 +79,16 @@ namespace mtm{
     }
 
     template <class T>
+    SortedList<T>::~SortedList(){
+        Node<T>* ptr = head_node;
+        while(ptr){
+            head_node = ptr->getNext();
+            delete ptr;
+            ptr = head_node;
+        }
+    }
+
+    template <class T>
     SortedList<T>::SortedList(const SortedList<T>& s) :
         iterator (s.iterator),
         size(0),
@@ -97,11 +105,16 @@ namespace mtm{
         if (this == &s) {
             return *this;
         }
-        // delete old data
+        Node<T>* ptr = head_node;
+        while(ptr){
+            head_node = ptr->getNext();
+            delete ptr;
+            ptr = head_node;
+        }
         iterator = s.iterator;
         head_node = nullptr;
-        Node<T>* ptr = s.head_node;
-        while(!ptr){
+        ptr = s.head_node;
+        while(ptr){
             this->insert(ptr->getData());
             ptr=ptr->getNext();
         }
@@ -142,6 +155,7 @@ namespace mtm{
             !(ptr->getData() < *iter))
         {
             head_node=ptr->getNext();
+            delete ptr;
             size--;
             return;
         }
@@ -149,10 +163,12 @@ namespace mtm{
             if(!(*iter < ptr->getNext()->getData()) &&
                 !(ptr->getNext()->getData() < *iter)){
                 ptr->setNext(ptr->getNext()->getNext());
+                delete ptr;
                 size--;
                 return;
             }
             ptr->setNext(ptr->getNext());
+            delete ptr;
             size--;
         }
     }
@@ -181,7 +197,7 @@ namespace mtm{
         for (typename SortedList<T>::const_iterator it = begin(); !(it == end()); ++it) {
             result.insert(f(*it));
         }
-    return result;
+        return result;
     }
 
     template <class T>
