@@ -7,6 +7,11 @@
 
 namespace mtm{
 
+    const int SNIPER_AMMO_ATTACK = 1;
+    const int SNIPER_AMMO_LOAD = 2;
+    const int SNIPER_MOVE_DISTANCE = 4;
+    const int SNIPER_MINIMAL_RANGE_DIVIDER = 2;
+
     class Sniper : public Character {
         public:
             Sniper(Team team, units_t health, units_t ammo, units_t range,units_t power) :

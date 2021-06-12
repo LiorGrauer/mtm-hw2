@@ -3,7 +3,7 @@
 namespace mtm{
 
     bool Soldier::checkMove(GridPoint src_point, GridPoint dst_point) {
-        if(GridPoint::distance(src_point,dst_point)<=3){
+        if(GridPoint::distance(src_point,dst_point)<=SOLDIER_MOVE_DISTANCE){
             return true;
         } else {
             return false;
@@ -11,7 +11,7 @@ namespace mtm{
     }
 
     void Soldier::load(){
-        ammo+=3;
+        ammo+=SOLDIER_AMMO_LOAD;
     }
 
     bool Soldier::checkAttack(GridPoint src_point, GridPoint dst_point,
@@ -19,7 +19,7 @@ namespace mtm{
         if(GridPoint::distance(src_point,dst_point)>getRange()){
             throw OutOfRange();
         }
-        if(ammo<1)
+        if(ammo<SOLDIER_AMMO_ATTACK)
         {
             throw OutOfAmmo();
         }
@@ -33,9 +33,10 @@ namespace mtm{
         double double_power = getPower();
         if(damage_point_team != getTeam()){
             if(dst_point==damage_point){
+                ammo-=SOLDIER_AMMO_ATTACK;
                 return getPower();
             } else {
-                return ceil(double_power/2);
+                return ceil(double_power/SOLDIER_INCIDENTAL_DAMAGE_DIVIDER);
             }
         } else {
             return 0;
@@ -44,7 +45,7 @@ namespace mtm{
     
     units_t Soldier::getIncidentalDamageRange(){
         double double_range = getRange();
-        return ceil(double_range/3);
+        return ceil(double_range/SOLDIER_INCIDENTAL_DAMAGE_RANGE_DIVIDER);
     }
 
     Character* Soldier::clone() const{

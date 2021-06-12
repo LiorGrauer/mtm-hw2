@@ -7,6 +7,10 @@
 
 namespace mtm{
 
+    const int MEDIC_AMMO_ATTACK = 1;
+    const int MEDIC_AMMO_LOAD = 5;
+    const int MEDIC_MOVE_DISTANCE = 5;
+
     class Medic : public Character {
         public:
             Medic(Team team, units_t health, units_t ammo, units_t range,units_t power) :
