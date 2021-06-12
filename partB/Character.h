@@ -41,5 +41,6 @@ namespace mtm{
             };
             virtual units_t attack() = 0;
     };
+    
 }
 #endif
