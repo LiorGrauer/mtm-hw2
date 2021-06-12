@@ -16,7 +16,9 @@ namespace mtm{
 
     bool Sniper::checkAttack(GridPoint src_point, GridPoint dst_point,
                             bool occupied, Team dst_point_team){
-        if(GridPoint::distance(src_point,dst_point)>getRange()){
+        double double_range = getRange();
+        if((GridPoint::distance(src_point,dst_point)>getRange()) ||
+            (GridPoint::distance(src_point,dst_point)<ceil(double_range/2))){
             throw OutOfRange();
         }
         if(ammo<1)
@@ -26,7 +28,6 @@ namespace mtm{
         if((!occupied) || (dst_point_team == getTeam())){
             throw IllegalTarget();
         }
-        double double_range = getRange();
     }
 
     units_t Sniper::attack(GridPoint dst_point, GridPoint damage_point,
