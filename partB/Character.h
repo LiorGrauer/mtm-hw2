@@ -5,6 +5,7 @@
 #include "./Exceptions.h"
 
 namespace mtm{
+    
     class Character{
         private:
             Team team;
