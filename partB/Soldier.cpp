@@ -30,12 +30,21 @@ namespace mtm{
 
     units_t Soldier::attack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
-
+        double double_power = getPower();
+        if(damage_point_team != getTeam()){
+            if(dst_point==damage_point){
+                return getPower();
+            } else {
+                return ceil(double_power/2);
+            }
+        } else {
+            return 0;
+        }
     }
     
     units_t Soldier::getIncidentalDamageRange(){
         double double_range = getRange();
-        return (ceil(double_range/3));
+        return ceil(double_range/3);
     }
 
     Character* Soldier::clone() const{

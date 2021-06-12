@@ -30,7 +30,15 @@ namespace mtm{
 
     units_t Medic::attack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
-
+        if(dst_point==damage_point){
+            if(damage_point_team == getTeam()){
+                return -(getPower());
+            } else {
+                return getPower();
+            }
+        } else {
+            return 0;
+        }
     }
 
     Character* Medic::clone() const{

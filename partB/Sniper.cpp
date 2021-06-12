@@ -26,11 +26,16 @@ namespace mtm{
         if((!occupied) || (dst_point_team == getTeam())){
             throw IllegalTarget();
         }
+        double double_range = getRange();
     }
 
     units_t Sniper::attack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
-
+        if(dst_point==damage_point){
+            return getPower();
+        } else {
+            return 0;
+        }
     }
 
     Character* Sniper::clone() const{
