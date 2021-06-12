@@ -35,11 +35,13 @@ namespace mtm{
             };
             virtual bool checkMove(GridPoint src_point, GridPoint dst_point) = 0;
             virtual void load() = 0;
-            virtual bool checkAttack(GridPoint src_point, GridPoint dst_point) = 0;
+            virtual bool checkAttack(GridPoint src_point, GridPoint dst_point,
+                                    bool occupied, Team dst_point_team) = 0;
             virtual units_t getIncidentalDamageRange(){
                 return 0;
             };
-            virtual units_t attack() = 0;
+            virtual units_t attack(GridPoint dst_point, GridPoint damage_point,
+                                    Team damage_point_team) = 0;
     };
     
 }

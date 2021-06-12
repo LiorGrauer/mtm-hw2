@@ -14,8 +14,10 @@ namespace mtm{
             virtual ~Sniper() {};
             virtual bool checkMove(GridPoint src_point, GridPoint dst_point) override;
             virtual void load() override;
-            virtual bool checkAttack(GridPoint src_point, GridPoint dst_point) override;
-            virtual units_t attack() override;
+            virtual bool checkAttack(GridPoint src_point, GridPoint dst_point,
+                                    bool occupied, Team dst_point_team) override;
+            virtual units_t attack(GridPoint dst_point, GridPoint damage_point,
+                                    Team damage_point_team) override;
     };
     
 }
