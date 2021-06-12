@@ -1,12 +1,13 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+#include "./Character.h"
 #include "./Auxiliaries.h"
 #include "./Exceptions.h"
 
 namespace mtm{
-    
-    class Character{
+
+    class Medic : public Character {
         private:
             Team team;
             units_t range, power;
@@ -15,9 +16,9 @@ namespace mtm{
             units_t health, ammo;
 
         public:
-            Character(Team team, units_t health, units_t ammo, units_t range,units_t power) :
+            Medic(Team team, units_t health, units_t ammo, units_t range,units_t power) :
                 team(team), health(health), ammo(ammo), range(range), power(power) {}
-            virtual ~Character() {};
+            virtual ~Medic() {};
             units_t getRange() const{
                 return range;
             };
