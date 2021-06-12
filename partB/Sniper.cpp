@@ -16,12 +16,25 @@ namespace mtm{
 
     bool Sniper::checkAttack(GridPoint src_point, GridPoint dst_point,
                             bool occupied, Team dst_point_team){
-
+        if(GridPoint::distance(src_point,dst_point)>getRange()){
+            throw OutOfRange();
+        }
+        if(ammo<1)
+        {
+            throw OutOfAmmo();
+        }
+        if((!occupied) || (dst_point_team == getTeam())){
+            throw IllegalTarget();
+        }
     }
 
     units_t Sniper::attack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
 
+    }
+
+    Character* Sniper::clone() const{
+        return new Sniper(*this);
     }
 
 }

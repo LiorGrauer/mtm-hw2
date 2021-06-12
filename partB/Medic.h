@@ -18,6 +18,7 @@ namespace mtm{
                                     bool occupied, Team dst_point_team) override;
             virtual units_t attack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team) override;
+            virtual Character* clone() const override;
     };
     
 }

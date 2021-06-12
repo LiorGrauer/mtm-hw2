@@ -19,11 +19,13 @@ namespace mtm{
         if(GridPoint::distance(src_point,dst_point)>getRange()){
             throw OutOfRange();
         }
-        if(ammo)
+        if(ammo<1)
         {
-            /* code */
+            throw OutOfAmmo();
         }
-        
+        if(src_point.col != dst_point.col || src_point.row != dst_point.row){
+            throw IllegalTarget();
+        }
     }
 
     units_t Soldier::attack(GridPoint dst_point, GridPoint damage_point,
@@ -34,6 +36,10 @@ namespace mtm{
     units_t Soldier::getIncidentalDamageRange(){
         double double_range = getRange();
         return (ceil(double_range/3));
+    }
+
+    Character* Soldier::clone() const{
+        return new Soldier(*this);
     }
 
 }

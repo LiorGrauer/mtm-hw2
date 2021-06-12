@@ -19,6 +19,7 @@ namespace mtm{
             virtual units_t getIncidentalDamageRange() override;
             virtual units_t attack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team) override;
+            virtual Character* clone() const override;
     };
     
 }
