@@ -16,7 +16,9 @@ namespace mtm{
 
         public:
             Character(Team team, units_t health, units_t ammo, units_t range,units_t power) :
-                team(team), health(health), ammo(ammo), range(range), power(power) {}
+                team(team), health(health), ammo(ammo), range(range), power(power) {};
+            Character& operator=(const Character& character) = delete;
+            Character(const Character& character) = default;
             virtual ~Character() {};
             units_t getRange() const{
                 return range;
