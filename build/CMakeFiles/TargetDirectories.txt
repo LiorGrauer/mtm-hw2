@@ -1,3 +1,0 @@
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/build/CMakeFiles/rebuild_cache.dir
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/build/CMakeFiles/Exam_exe.dir
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/build/CMakeFiles/edit_cache.dir
