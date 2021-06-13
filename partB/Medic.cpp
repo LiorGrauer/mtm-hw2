@@ -32,7 +32,7 @@ namespace mtm{
         return true;
     }
 
-    units_t Medic::attack(GridPoint dst_point, GridPoint damage_point,
+    units_t Medic::executeAttack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
         if(dst_point==damage_point){
             if(damage_point_team != getTeam()){

@@ -32,7 +32,7 @@ namespace mtm{
         return true;
     }
 
-    units_t Soldier::attack(GridPoint dst_point, GridPoint damage_point,
+    units_t Soldier::executeAttack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
         double double_power = getPower();
         if(damage_point_team != getTeam()){

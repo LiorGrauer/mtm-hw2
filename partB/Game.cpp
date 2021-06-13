@@ -113,7 +113,7 @@ namespace mtm {
                 if(occupied){
                 board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->
                     changeHealth(board.at(src_coordinates.row+i).at(src_coordinates.col+j)->
-                    attack(GridPoint(dst_coordinates.row,dst_coordinates.col),
+                    executeAttack(GridPoint(dst_coordinates.row,dst_coordinates.col),
                     GridPoint(dst_coordinates.row+i,dst_coordinates.col+j),
                     board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->getTeam()));
                     if(board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->getHealth()<1){
