@@ -70,3 +70,13 @@ C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
 ./Exceptions.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
 
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/gameTest.cpp
+iostream
+-
+cassert
+-
+Exceptions.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
+Game.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.h
+
