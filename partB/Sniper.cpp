@@ -35,10 +35,14 @@ namespace mtm{
         return true;
     }
 
-    units_t Sniper::attack(GridPoint dst_point, GridPoint damage_point,
+    units_t Sniper::executeAttack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
         if(dst_point==damage_point){
             ammo-=SNIPER_AMMO_ATTACK;
+            hits_counter++;
+            if(hits_counter%SNIPER_HITS_UNTIL_CRITICAL==0){
+                return SNIPER_CRITICAL_MULTIPLIER*getPower();
+            }
             return getPower();
         } else {
             return 0;
