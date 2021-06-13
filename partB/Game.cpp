@@ -12,14 +12,10 @@ namespace mtm {
         if (height < 1 || width < 1){
             throw IllegalArgument();
         }
-        //board.resize(height);
         for (int i=0; i<height; i++){
             vector<std::shared_ptr<Character>> row_vector(width, nullptr);
             board.push_back(row_vector);
         }
-        /*for (vector<std::shared_ptr<Character>> row : board){
-            row.resize(width, nullptr);
-        }*/
     }
 
     Game::Game(const Game& other):

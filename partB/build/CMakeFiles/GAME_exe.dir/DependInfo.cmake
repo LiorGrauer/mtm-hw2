@@ -1,21 +1,20 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.cpp" "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/GAME_exe.dir/Auxiliaries.cpp.obj"
-  "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.cpp" "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/GAME_exe.dir/Exceptions.cpp.obj"
-  "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.cpp" "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/GAME_exe.dir/Game.cpp.obj"
-  "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Medic.cpp" "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/GAME_exe.dir/Medic.cpp.obj"
-  "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Sniper.cpp" "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/GAME_exe.dir/Sniper.cpp.obj"
-  "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Soldier.cpp" "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/GAME_exe.dir/Soldier.cpp.obj"
-  "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/gameTest.cpp" "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/GAME_exe.dir/gameTest.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Auxiliaries.cpp" "CMakeFiles/GAME_exe.dir/Auxiliaries.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Auxiliaries.cpp.obj.d"
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Exceptions.cpp" "CMakeFiles/GAME_exe.dir/Exceptions.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Exceptions.cpp.obj.d"
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Game.cpp" "CMakeFiles/GAME_exe.dir/Game.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Game.cpp.obj.d"
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Medic.cpp" "CMakeFiles/GAME_exe.dir/Medic.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Medic.cpp.obj.d"
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Sniper.cpp" "CMakeFiles/GAME_exe.dir/Sniper.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Sniper.cpp.obj.d"
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Soldier.cpp" "CMakeFiles/GAME_exe.dir/Soldier.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Soldier.cpp.obj.d"
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/gameTest.cpp" "CMakeFiles/GAME_exe.dir/gameTest.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/gameTest.cpp.obj.d"
   )
 
 # Targets to which this target links.

@@ -1,6 +1,6 @@
-The system is: Windows - 10.0.18362 - AMD64
+The system is: Windows - 10.0.19043 - AMD64
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/TDM-GCC-64/bin/x86_64-w64-mingw32-g++.exe 
+Compiler: C:/TDM-GCC-64/bin/g++.exe 
 Build flags: 
 Id flags:  
 
@@ -10,39 +10,23 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
 
-The CXX compiler identification is GNU, found in "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/3.16.19112601-MSVC_2/CompilerIdCXX/a.exe"
-
-Determining if the CXX compiler works passed with the following output:
-Change Dir: C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):C:/TDM-GCC-64/bin/mingw32-make.exe cmTC_9f53a/fast && C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_9f53a.dir\build.make CMakeFiles/cmTC_9f53a.dir/build
-mingw32-make.exe[1]: Entering directory 'C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_9f53a.dir/testCXXCompiler.cxx.obj
-C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe     -o CMakeFiles\cmTC_9f53a.dir\testCXXCompiler.cxx.obj -c "C:\Users\liorg\OneDrive - Technion\Documents\GitHub\mtm-hw2\partB\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
-Linking CXX executable cmTC_9f53a.exe
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_9f53a.dir\link.txt --verbose=1
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_9f53a.dir/objects.a
-C:\TDM-GCC-64\bin\ar.exe cr CMakeFiles\cmTC_9f53a.dir/objects.a @CMakeFiles\cmTC_9f53a.dir\objects1.rsp
-C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_9f53a.dir/objects.a -Wl,--no-whole-archive  -o cmTC_9f53a.exe -Wl,--out-implib,libcmTC_9f53a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_9f53a.dir\linklibs.rsp
-mingw32-make.exe[1]: Leaving directory 'C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp'
-
-
+The CXX compiler identification is GNU, found in "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/build/CMakeFiles/3.20.0/CompilerIdCXX/a.exe"
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/TDM-GCC-64/bin/mingw32-make.exe cmTC_8e75f/fast && C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_8e75f.dir\build.make CMakeFiles/cmTC_8e75f.dir/build
-mingw32-make.exe[1]: Entering directory 'C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8e75f.dir/CMakeCXXCompilerABI.cpp.obj
-C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe    -v -o CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp"
+Run Build Command(s):C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_d7a3b/fast && C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_d7a3b.dir\build.make CMakeFiles/cmTC_d7a3b.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d7a3b.dir/CMakeCXXCompilerABI.cpp.obj
+C:\TDM-GCC-64\bin\g++.exe   -v -o CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXCompilerABI.cpp"
 Using built-in specs.
-COLLECT_GCC=C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe
+COLLECT_GCC=C:\TDM-GCC-64\bin\g++.exe
 Target: x86_64-w64-mingw32
 Configured with: ../../../src/gcc-git-9.2.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-threads --enable-libstdcxx-time --with-gnu-ld --disable-werror --disable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=http://tdm-gcc.tdragon.net/bugs
 Thread model: posix
 gcc version 9.2.0 (tdm64-1) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
- C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/cc1plus.exe -quiet -v -iprefix C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/ -D_REENTRANT C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\liorg\AppData\Local\Temp\cc3qhjnF.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
+ C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/cc1plus.exe -quiet -v -iprefix C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/ -D_REENTRANT C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\Tom\AppData\Local\Temp\cc9XOjbX.s
 GNU C++14 (tdm64-1) version 9.2.0 (x86_64-w64-mingw32)
 	compiled by GNU C version 9.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
 
@@ -69,19 +53,19 @@ GNU C++14 (tdm64-1) version 9.2.0 (x86_64-w64-mingw32)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 75884ba1d8f1274f120b97d05d513c01
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
- C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\liorg\AppData\Local\Temp\cc3qhjnF.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
+ C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\Tom\AppData\Local\Temp\cc9XOjbX.s
 GNU assembler version 2.33.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.33.1
 COMPILER_PATH=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/;C:/TDM-GCC-64/bin/../libexec/gcc/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/bin/
 LIBRARY_PATH=C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/;C:/TDM-GCC-64/bin/../lib/gcc/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_8e75f.exe
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_8e75f.dir\link.txt --verbose=1
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_8e75f.dir/objects.a
-C:\TDM-GCC-64\bin\ar.exe cr CMakeFiles\cmTC_8e75f.dir/objects.a @CMakeFiles\cmTC_8e75f.dir\objects1.rsp
-C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_8e75f.dir/objects.a -Wl,--no-whole-archive  -o cmTC_8e75f.exe -Wl,--out-implib,libcmTC_8e75f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_d7a3b.exe
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_d7a3b.dir\link.txt --verbose=1
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_d7a3b.dir/objects.a
+C:\TDM-GCC-64\bin\ar.exe cr CMakeFiles\cmTC_d7a3b.dir/objects.a @CMakeFiles\cmTC_d7a3b.dir\objects1.rsp
+C:\TDM-GCC-64\bin\g++.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_d7a3b.dir/objects.a -Wl,--no-whole-archive -o cmTC_d7a3b.exe -Wl,--out-implib,libcmTC_d7a3b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
-COLLECT_GCC=C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe
+COLLECT_GCC=C:\TDM-GCC-64\bin\g++.exe
 COLLECT_LTO_WRAPPER=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/lto-wrapper.exe
 Target: x86_64-w64-mingw32
 Configured with: ../../../src/gcc-git-9.2.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-threads --enable-libstdcxx-time --with-gnu-ld --disable-werror --disable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=http://tdm-gcc.tdragon.net/bugs
@@ -89,10 +73,10 @@ Thread model: posix
 gcc version 9.2.0 (tdm64-1) 
 COMPILER_PATH=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/;C:/TDM-GCC-64/bin/../libexec/gcc/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/bin/
 LIBRARY_PATH=C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/;C:/TDM-GCC-64/bin/../lib/gcc/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/;C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8e75f.exe' '-mtune=generic' '-march=x86-64'
- C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/collect2.exe -plugin C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\liorg\AppData\Local\Temp\ccNaUoPh.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep --exclude-libs=libpthread.a -Bdynamic -o cmTC_8e75f.exe C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtbegin.o -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0 -LC:/TDM-GCC-64/bin/../lib/gcc -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../.. --whole-archive CMakeFiles\cmTC_8e75f.dir/objects.a --no-whole-archive --out-implib libcmTC_8e75f.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtend.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8e75f.exe' '-mtune=generic' '-march=x86-64'
-mingw32-make.exe[1]: Leaving directory 'C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d7a3b.exe' '-mtune=generic' '-march=x86-64'
+ C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/collect2.exe -plugin C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Tom\AppData\Local\Temp\ccb1YN9c.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep --exclude-libs=libpthread.a -Bdynamic -o cmTC_d7a3b.exe C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtbegin.o -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0 -LC:/TDM-GCC-64/bin/../lib/gcc -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../.. --whole-archive CMakeFiles\cmTC_d7a3b.dir/objects.a --no-whole-archive --out-implib libcmTC_d7a3b.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d7a3b.exe' '-mtune=generic' '-march=x86-64'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/build/CMakeFiles/CMakeTmp'
 
 
 
@@ -119,20 +103,20 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):C:/TDM-GCC-64/bin/mingw32-make.exe cmTC_8e75f/fast && C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_8e75f.dir\build.make CMakeFiles/cmTC_8e75f.dir/build]
-  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_8e75f.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe    -v -o CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp"]
+  ignore line: [Run Build Command(s):C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_d7a3b/fast && C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_d7a3b.dir\build.make CMakeFiles/cmTC_d7a3b.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_d7a3b.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [C:\TDM-GCC-64\bin\g++.exe   -v -o CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXCompilerABI.cpp"]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe]
+  ignore line: [COLLECT_GCC=C:\TDM-GCC-64\bin\g++.exe]
   ignore line: [Target: x86_64-w64-mingw32]
   ignore line: [Configured with: ../../../src/gcc-git-9.2.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-threads --enable-libstdcxx-time --with-gnu-ld --disable-werror --disable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=http://tdm-gcc.tdragon.net/bugs]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.2.0 (tdm64-1) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/cc1plus.exe -quiet -v -iprefix C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/ -D_REENTRANT C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\liorg\AppData\Local\Temp\cc3qhjnF.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/cc1plus.exe -quiet -v -iprefix C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/ -D_REENTRANT C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\Tom\AppData\Local\Temp\cc9XOjbX.s]
   ignore line: [GNU C++14 (tdm64-1) version 9.2.0 (x86_64-w64-mingw32)]
   ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
   ignore line: []
@@ -159,8 +143,8 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 75884ba1d8f1274f120b97d05d513c01]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\liorg\AppData\Local\Temp\cc3qhjnF.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\Tom\AppData\Local\Temp\cc9XOjbX.s]
   ignore line: [GNU assembler version 2.33.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.33.1]
   ignore line: [COMPILER_PATH=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/]
   ignore line: [C:/TDM-GCC-64/bin/../libexec/gcc/]
@@ -171,14 +155,14 @@ Parsed CXX implicit link information from above output:
   ignore line: [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib/]
   ignore line: [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/]
   ignore line: [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_8e75f.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_8e75f.exe]
-  ignore line: ["C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_8e75f.dir\link.txt --verbose=1]
-  ignore line: ["C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_8e75f.dir/objects.a]
-  ignore line: [C:\TDM-GCC-64\bin\ar.exe cr CMakeFiles\cmTC_8e75f.dir/objects.a @CMakeFiles\cmTC_8e75f.dir\objects1.rsp]
-  ignore line: [C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe     -v -Wl --whole-archive CMakeFiles\cmTC_8e75f.dir/objects.a -Wl --no-whole-archive  -o cmTC_8e75f.exe -Wl --out-implib libcmTC_8e75f.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d7a3b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_d7a3b.exe]
+  ignore line: ["C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_d7a3b.dir\link.txt --verbose=1]
+  ignore line: ["C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_d7a3b.dir/objects.a]
+  ignore line: [C:\TDM-GCC-64\bin\ar.exe cr CMakeFiles\cmTC_d7a3b.dir/objects.a @CMakeFiles\cmTC_d7a3b.dir\objects1.rsp]
+  ignore line: [C:\TDM-GCC-64\bin\g++.exe  -v -Wl --whole-archive CMakeFiles\cmTC_d7a3b.dir/objects.a -Wl --no-whole-archive -o cmTC_d7a3b.exe -Wl --out-implib libcmTC_d7a3b.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe]
+  ignore line: [COLLECT_GCC=C:\TDM-GCC-64\bin\g++.exe]
   ignore line: [COLLECT_LTO_WRAPPER=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/lto-wrapper.exe]
   ignore line: [Target: x86_64-w64-mingw32]
   ignore line: [Configured with: ../../../src/gcc-git-9.2.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-threads --enable-libstdcxx-time --with-gnu-ld --disable-werror --disable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=http://tdm-gcc.tdragon.net/bugs]
@@ -193,13 +177,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib/]
   ignore line: [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/]
   ignore line: [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8e75f.exe' '-mtune=generic' '-march=x86-64']
-  link line: [ C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/collect2.exe -plugin C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\liorg\AppData\Local\Temp\ccNaUoPh.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep --exclude-libs=libpthread.a -Bdynamic -o cmTC_8e75f.exe C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtbegin.o -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0 -LC:/TDM-GCC-64/bin/../lib/gcc -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../.. --whole-archive CMakeFiles\cmTC_8e75f.dir/objects.a --no-whole-archive --out-implib libcmTC_8e75f.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d7a3b.exe' '-mtune=generic' '-march=x86-64']
+  link line: [ C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/collect2.exe -plugin C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/liblto_plugin-0.dll -plugin-opt=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Tom\AppData\Local\Temp\ccb1YN9c.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep --exclude-libs=libpthread.a -Bdynamic -o cmTC_d7a3b.exe C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtbegin.o -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0 -LC:/TDM-GCC-64/bin/../lib/gcc -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib -LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../.. --whole-archive CMakeFiles\cmTC_d7a3b.dir/objects.a --no-whole-archive --out-implib libcmTC_d7a3b.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtend.o]
     arg [C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/9.2.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\liorg\AppData\Local\Temp\ccNaUoPh.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\Tom\AppData\Local\Temp\ccb1YN9c.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
@@ -220,7 +204,7 @@ Parsed CXX implicit link information from above output:
     arg [--exclude-libs=libpthread.a] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_8e75f.exe] ==> ignore
+    arg [cmTC_d7a3b.exe] ==> ignore
     arg [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/crtbegin.o] ==> ignore
     arg [-LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0] ==> dir [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0]
@@ -230,10 +214,10 @@ Parsed CXX implicit link information from above output:
     arg [-LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/lib]
     arg [-LC:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../..] ==> dir [C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_8e75f.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_d7a3b.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_8e75f.dll.a] ==> ignore
+    arg [libcmTC_d7a3b.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
