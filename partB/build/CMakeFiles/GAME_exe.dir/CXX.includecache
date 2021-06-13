@@ -24,28 +24,6 @@ C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
 exception
 -
 
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.cpp
-./Game.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.h
-
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.h
-./Auxiliaries.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
-./Exceptions.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
-./Character.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Character.h
-./Medic.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Medic.h
-./Soldier.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Soldier.h
-./Sniper.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Sniper.h
-memory
--
-vector
--
-
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Medic.cpp
 ./Medic.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Medic.h
@@ -81,14 +59,4 @@ C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Character.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
 ./Exceptions.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
-
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/gameTest.cpp
-iostream
--
-cassert
--
-Exceptions.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
-Game.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.h
 

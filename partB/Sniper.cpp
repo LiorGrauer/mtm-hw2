@@ -21,25 +21,22 @@ namespace mtm{
             (GridPoint::distance(src_point,dst_point)
             <ceil(double_range/SNIPER_MINIMAL_RANGE_DIVIDER))){
             throw OutOfRange();
-            return false;
         }
         if(ammo<SNIPER_AMMO_ATTACK)
         {
             throw OutOfAmmo();
-            return false;
         }
         if((!occupied) || (dst_point_team == getTeam())){
             throw IllegalTarget();
-            return false;
         }
+        ammo-=SNIPER_AMMO_ATTACK;
+        hits_counter++;
         return true;
     }
 
     units_t Sniper::executeAttack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
         if(dst_point==damage_point){
-            ammo-=SNIPER_AMMO_ATTACK;
-            hits_counter++;
             if(hits_counter%SNIPER_HITS_UNTIL_CRITICAL==0){
                 return SNIPER_CRITICAL_MULTIPLIER*getPower();
             }

@@ -18,17 +18,15 @@ namespace mtm{
                                 bool occupied, Team dst_point_team){
         if(GridPoint::distance(src_point,dst_point)>getRange()){
             throw OutOfRange();
-            return false;
         }
         if(ammo<SOLDIER_AMMO_ATTACK)
         {
             throw OutOfAmmo();
-            return false;
         }
-        if(src_point.col != dst_point.col || src_point.row != dst_point.row){
+        if(src_point.col != dst_point.col && src_point.row != dst_point.row){
             throw IllegalTarget();
-            return false;
         }
+        ammo-=SOLDIER_AMMO_ATTACK;
         return true;
     }
 
@@ -37,7 +35,6 @@ namespace mtm{
         double double_power = getPower();
         if(damage_point_team != getTeam()){
             if(dst_point==damage_point){
-                ammo-=SOLDIER_AMMO_ATTACK;
                 return getPower();
             } else {
                 return ceil(double_power/SOLDIER_INCIDENTAL_DAMAGE_DIVIDER);

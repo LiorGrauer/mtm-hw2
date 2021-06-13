@@ -2,7 +2,7 @@
 
 #define BOARD_AT(row,col)       \
                                 \
-    board.at(row-1).at(col-1)   \
+    board.at(row).at(col)       \
                                 \
 
 namespace mtm {
@@ -22,10 +22,17 @@ namespace mtm {
         }*/
     }
 
-    Game::Game(const Game& other){
-        Game new_game(other.height, other.width);
+    Game::Game(const Game& other):
+    height(other.height),
+    width(other.width) {
         board = other.board;
-        //to check if copies successfully or needed to use clone() on every character
+        for (int i=0; i<height; i++){
+            for (int j=0; j<width; j++){
+                if (BOARD_AT(i,j) != nullptr){
+                    BOARD_AT(i,j) = std::shared_ptr<Character>(other.BOARD_AT(i,j)->clone());
+                }
+            }
+        }
     }
 
     Game& Game::operator=(const Game& other){
@@ -36,8 +43,8 @@ namespace mtm {
     }
 
     bool Game::outOfBoard (const GridPoint& coordinates){
-        return !(coordinates.col-1 >= 0 && coordinates.row-1 >= 0 &&
-                coordinates.col-1 < width && coordinates.row-1 < height);
+        return !(coordinates.col >= 0 && coordinates.row >= 0 &&
+                coordinates.col < width && coordinates.row < height);
     }
 
     void Game::addCharacter(const GridPoint& coordinates, std::shared_ptr<Character> character){
@@ -102,8 +109,7 @@ namespace mtm {
         bool occupied = BOARD_AT(dst_coordinates.row,dst_coordinates.col)
                         == nullptr ? false : true;
         if(!(BOARD_AT(src_coordinates.row,src_coordinates.col)->
-            checkAttack(GridPoint(src_coordinates.row-1,src_coordinates.col-1),
-                        GridPoint(dst_coordinates.row-1,dst_coordinates.col-1), occupied, (occupied)
+            checkAttack(src_coordinates, dst_coordinates, occupied, (occupied)
                         ? BOARD_AT(dst_coordinates.row,dst_coordinates.col)->getTeam() : CROSSFITTERS))){
                         //if dst is not occupied the team dosent affect the function
             return;
@@ -115,13 +121,12 @@ namespace mtm {
                 if(outOfBoard(GridPoint(dst_coordinates.row+i,dst_coordinates.col+j))){
                     continue;
                 }
-                occupied = BOARD_AT(dst_coordinates.row,dst_coordinates.col)
-                        == nullptr ? false : true;
+                occupied = (BOARD_AT(dst_coordinates.row+i,dst_coordinates.col+j) == nullptr) ? false : true;
                 if(occupied){
-                BOARD_AT(dst_coordinates.row+i,dst_coordinates.col+j)->
-                    changeHealth(BOARD_AT(dst_coordinates.row+i,dst_coordinates.col+j)->
-                    executeAttack(GridPoint(dst_coordinates.row-1,dst_coordinates.col-1),
-                    GridPoint(dst_coordinates.row+i-1,dst_coordinates.col+j-1),
+                    BOARD_AT(dst_coordinates.row+i,dst_coordinates.col+j)->
+                    changeHealth(BOARD_AT(src_coordinates.row,src_coordinates.col)->
+                    executeAttack(GridPoint(dst_coordinates.row,dst_coordinates.col),
+                    GridPoint(dst_coordinates.row+i,dst_coordinates.col+j),
                     BOARD_AT(dst_coordinates.row+i,dst_coordinates.col+j)->getTeam()));
                     if(BOARD_AT(dst_coordinates.row+i,dst_coordinates.col+j)->getHealth()<1){
                         BOARD_AT(dst_coordinates.row+i,dst_coordinates.col+j) = nullptr;
@@ -146,7 +151,7 @@ namespace mtm {
         //char* board_string = new char[game.width*game.height];
         for (int i=0; i<game.height; i++){
             for (int j=0; j<game.width; j++){
-                std::shared_ptr<Character> character = game.BOARD_AT(i+1,j+1);
+                std::shared_ptr<Character> character = game.BOARD_AT(i,j);
                 if (!character){
                     board_string += ' ';
                 }
@@ -165,8 +170,8 @@ namespace mtm {
         bool crossfitters = false;
         for (int i=0; i<height; i++){
             for (int j=0; j<width; j++){
-                if (BOARD_AT(i+1,j+1) != nullptr){
-                    if (BOARD_AT(i+1,j+1)->getTeam() == POWERLIFTERS){
+                if (BOARD_AT(i,j) != nullptr){
+                    if (BOARD_AT(i,j)->getTeam() == POWERLIFTERS){
                         powerlifters = true;
                     }
                     else {

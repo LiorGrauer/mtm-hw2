@@ -33,7 +33,7 @@ namespace mtm{
                 return team;
             };
             void changeHealth(int change){
-                health+=change;
+                health-=change;
             };
             virtual bool checkMove(GridPoint src_point, GridPoint dst_point) = 0;
             virtual void load() = 0;
