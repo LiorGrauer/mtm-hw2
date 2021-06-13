@@ -135,21 +135,21 @@ namespace mtm {
     }
 
     std::ostream& operator<<(std::ostream& os, const Game& game){
-        char* board_string[game.width*game.height];
+        std::string board_string;
+        //char* board_string = new char[game.width*game.height];
         for (int i=0; i<game.height; i++){
             for (int j=0; j<game.width; j++){
                 std::shared_ptr<Character> character = game.board.at(i).at(j);
                 if (!character){
-                    board_string[i][j] = ' ';
+                    board_string += ' ';
                 }
                 else{
-                    board_string[i][j] = character.returnCharacterLetter();
+                    board_string += character->returnCharacterLetter();
                 }
             }
         }
-        const char* begin = *board_string;
-        //what should i assign in end?
-        const char* end = nullptr;
+        const char* begin = board_string.c_str();
+        const char* end = board_string.c_str()+(game.height*game.width);
         return printGameBoard(os, begin, end, game.width);
     }
 
