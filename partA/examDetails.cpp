@@ -11,8 +11,8 @@ namespace mtm {
         course_number(course_number), 
         month(month), 
         day(day), 
-        hour(hour), 
         length(length),
+        hour(hour), 
         link(link) {
         if (course_number < 1){
             throw ExamDetails::InvalidArgsException();
@@ -32,8 +32,8 @@ namespace mtm {
         course_number(exam.course_number), 
         month(exam.month), 
         day(exam.day), 
-        hour(exam.hour), 
         length(exam.length),
+        hour(exam.hour), 
         link(exam.link) {
     }
 

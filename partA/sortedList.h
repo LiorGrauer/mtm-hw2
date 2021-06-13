@@ -5,8 +5,6 @@
 
 namespace mtm{
 
-#pragma region Node<T>
-
     template <class T>
     class Node {
         private:
@@ -41,10 +39,6 @@ namespace mtm{
     void Node<T>::setNext(Node* ptr){
         next_node = ptr;
     }
-
-#pragma endregion
-
-#pragma region SortedList<T>
 
     template <class T>
     class SortedList {
@@ -89,9 +83,9 @@ namespace mtm{
 
     template <class T>
     SortedList<T>::SortedList(const SortedList<T>& s) :
-        iterator (s.iterator),
+        head_node(nullptr),
         size(0),
-        head_node(nullptr) {
+        iterator (s.iterator) {
         Node<T>* ptr = s.head_node;
         while(ptr){
             this->insert(ptr->getData());
@@ -217,10 +211,6 @@ namespace mtm{
         return const_iterator(nullptr);
     }
 
-#pragma endregion
-
-#pragma region SortedList<T>::const_iterator
-
     template <class T>
     class SortedList<T>::const_iterator {
         private:
@@ -276,8 +266,6 @@ namespace mtm{
     const T& SortedList<T>::const_iterator::operator*() const{
         return ptr->getData();
     }
-
-#pragma endregion
 
 }
 
