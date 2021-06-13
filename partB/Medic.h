@@ -20,7 +20,7 @@ namespace mtm{
             void load() override;
             bool checkAttack(GridPoint src_point, GridPoint dst_point,
                                     bool occupied, Team dst_point_team) override;
-            units_t attack(GridPoint dst_point, GridPoint damage_point,
+            units_t executeAttack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team) override;
             Character* clone() const override;
             char returnCharacterLetter() const override;
