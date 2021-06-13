@@ -178,10 +178,17 @@ namespace mtm {
             }
         }
         if (powerlifters && !crossfitters){
-            *winningTeam = POWERLIFTERS;
+            if (winningTeam){
+                *winningTeam = POWERLIFTERS;
+            }
+            return true;
         }
         else if (!powerlifters && crossfitters){
-            *winningTeam = CROSSFITTERS;
+            if (winningTeam){
+                *winningTeam = CROSSFITTERS;
+            }
+            return true;
         }
+        return false;
     }
 }

@@ -24,9 +24,27 @@ C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
 exception
 -
 
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Medic.cpp
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.cpp
+./Game.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.h
+
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Game.h
+./Auxiliaries.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
+./Exceptions.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
+./Character.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Character.h
 ./Medic.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Medic.h
+./Soldier.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Soldier.h
+./Sniper.h
+C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Sniper.h
+memory
+-
+vector
+-
 
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Medic.h
 ./Character.h
@@ -36,10 +54,6 @@ C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
 ./Exceptions.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
 
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Sniper.cpp
-./Sniper.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Sniper.h
-
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Sniper.h
 ./Character.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Character.h
@@ -47,10 +61,6 @@ C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Character.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
 ./Exceptions.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
-
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Soldier.cpp
-./Soldier.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Soldier.h
 
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Soldier.h
 ./Character.h
