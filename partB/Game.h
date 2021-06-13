@@ -34,6 +34,7 @@ namespace mtm {
             void reload(const GridPoint & coordinates);
             std::ostream& printGameBoard(std::ostream& os, const char* begin, 
                                          const char* end, unsigned int width) const;
+            friend std::ostream& operator<<(std::ostream& os, const Game& game);
             bool isOver(Team* winningTeam=NULL) const;
     };
 }

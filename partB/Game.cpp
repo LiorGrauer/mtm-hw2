@@ -119,12 +119,11 @@ namespace mtm {
         board.at(coordinates.row).at(coordinates.col)->load();
     }
 
-    std::ostream& Game::printGameBoard(std::ostream& os, const char* begin, 
-                                    const char* end, unsigned int width) const{
-        char* board_string[width*height];
-        for (int i=0; i<height; i++){
-            for (int j=0; j<width; j++){
-                std::shared_ptr<Character> character = board.at(i).at(j);
+    std::ostream& operator<<(std::ostream& os, const Game& game){
+        char* board_string[game.width*game.height];
+        for (int i=0; i<game.height; i++){
+            for (int j=0; j<game.width; j++){
+                std::shared_ptr<Character> character = game.board.at(i).at(j);
                 if (!character){
                     board_string[i][j] = ' ';
                 }
@@ -160,10 +159,10 @@ namespace mtm {
         const char* begin = *board_string;
         //what should i assign in end?
         const char* end = nullptr;
-        return printGameBoard(os, begin, end, width);
+        return printGameBoard(os, begin, end, game.width);
     }
 
-    bool Game::isOver(Team* winningTeam=NULL) const{
+    bool Game::isOver(Team* winningTeam) const{
         bool powerlifters = false;
         bool crossfitters = false;
         for (int i=0; i<height; i++){
