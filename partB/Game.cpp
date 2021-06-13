@@ -44,7 +44,14 @@ namespace mtm {
         if (health < 1 || ammo < 0 || range < 0 || power < 0){
             throw IllegalArgument();
         }
-                                                                
+        std::shared_ptr<Character> new_character;
+        switch (type) {
+            case SOLDIER: new_character = std::shared_ptr<Character>(new Soldier(team, health, ammo, range, power));
+            case MEDIC: new_character = std::shared_ptr<Character>(new Medic(team, health, ammo, range, power));
+            case SNIPER: new_character = std::shared_ptr<Character>(new Sniper(team, health, ammo, range, power));
+            default: new_character = std::shared_ptr<Character>(nullptr);
+        }
+        return new_character;                                                  
     }
 
     void Game::move(const GridPoint & src_coordinates, const GridPoint & dst_coordinates){
@@ -61,10 +68,68 @@ namespace mtm {
 
     std::ostream& Game::printGameBoard(std::ostream& os, const char* begin, 
                                     const char* end, unsigned int width) const{
-
+        char* board_string[width*height];
+        for (int i=0; i<height; i++){
+            for (int j=0; j<width; j++){
+                std::shared_ptr<Character> character = board.at(i).at(j);
+                if (!character){
+                    board_string[i][j] = ' ';
+                }
+                else{
+                    std::string character_type = typeid(*character).name();
+                    if (character_type == "Soldier"){
+                        if (character->getTeam() == POWERLIFTERS) {
+                            board_string[i][j] = 'S';
+                        }
+                        else {
+                            board_string[i][j] = 's';
+                        }
+                    }
+                    else if (character_type == "Medic"){
+                        if (character->getTeam() == POWERLIFTERS) {
+                            board_string[i][j] = 'M';
+                        }
+                        else {
+                            board_string[i][j] = 'm';
+                        }
+                    }
+                    else if (character_type == "Sniper"){
+                        if (character->getTeam() == POWERLIFTERS) {
+                            board_string[i][j] = 'S';
+                        }
+                        else {
+                            board_string[i][j] = 's';
+                        }
+                    }
+                }
+            }
+        }
+        const char* begin = *board_string;
+        //what should i assign in end?
+        const char* end = nullptr;
+        return printGameBoard(os, begin, end, width);
     }
 
     bool Game::isOver(Team* winningTeam=NULL) const{
-
+        bool powerlifters = false;
+        bool crossfitters = false;
+        for (int i=0; i<height; i++){
+            for (int j=0; j<width; j++){
+                if (board.at(i).at(j) != nullptr){
+                    if (board.at(i).at(j)->getTeam() == POWERLIFTERS){
+                        powerlifters = true;
+                    }
+                    else {
+                        crossfitters = true;
+                    }
+                }
+            }
+        }
+        if (powerlifters && !crossfitters){
+            *winningTeam = POWERLIFTERS;
+        }
+        else if (!powerlifters && crossfitters){
+            *winningTeam = CROSSFITTERS;
+        }
     }
 }
