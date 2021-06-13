@@ -104,6 +104,9 @@ namespace mtm {
                     attack(GridPoint(dst_coordinates.row,dst_coordinates.col),
                     GridPoint(dst_coordinates.row+i,dst_coordinates.col+j),
                     board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->getTeam()));
+                    if(board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->getHealth()<1){
+                        board.at(dst_coordinates.row+i).at(dst_coordinates.col+j) = nullptr;
+                    }
                 }
             }
         }
