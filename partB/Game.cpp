@@ -102,9 +102,10 @@ namespace mtm {
         bool occupied = BOARD_AT(dst_coordinates.row,dst_coordinates.col)
                         == nullptr ? false : true;
         if(!(BOARD_AT(src_coordinates.row,src_coordinates.col)->
-            checkAttack(src_coordinates,dst_coordinates, occupied, (occupied) ?
-            BOARD_AT(dst_coordinates.row,dst_coordinates.col)->getTeam()
-             : CROSSFITTERS))){ //if dst is not occupied the team dosent affect the function
+            checkAttack(GridPoint(src_coordinates.row-1,src_coordinates.col-1),
+                        GridPoint(dst_coordinates.row-1,dst_coordinates.col-1), occupied, (occupied)
+                        ? BOARD_AT(dst_coordinates.row,dst_coordinates.col)->getTeam() : CROSSFITTERS))){
+                        //if dst is not occupied the team dosent affect the function
             return;
         }
         int incidential_range = BOARD_AT(src_coordinates.row,src_coordinates.col)->
