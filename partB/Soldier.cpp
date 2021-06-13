@@ -18,14 +18,18 @@ namespace mtm{
                                 bool occupied, Team dst_point_team){
         if(GridPoint::distance(src_point,dst_point)>getRange()){
             throw OutOfRange();
+            return false;
         }
         if(ammo<SOLDIER_AMMO_ATTACK)
         {
             throw OutOfAmmo();
+            return false;
         }
         if(src_point.col != dst_point.col || src_point.row != dst_point.row){
             throw IllegalTarget();
+            return false;
         }
+        return true;
     }
 
     units_t Soldier::attack(GridPoint dst_point, GridPoint damage_point,

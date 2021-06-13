@@ -21,14 +21,18 @@ namespace mtm{
             (GridPoint::distance(src_point,dst_point)
             <ceil(double_range/SNIPER_MINIMAL_RANGE_DIVIDER))){
             throw OutOfRange();
+            return false;
         }
         if(ammo<SNIPER_AMMO_ATTACK)
         {
             throw OutOfAmmo();
+            return false;
         }
         if((!occupied) || (dst_point_team == getTeam())){
             throw IllegalTarget();
+            return false;
         }
+        return true;
     }
 
     units_t Sniper::attack(GridPoint dst_point, GridPoint damage_point,
