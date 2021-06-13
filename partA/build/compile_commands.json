@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partA/build",
+  "command": "C:\\TDM-GCC-64\\bin\\g++.exe   -g -std=gnu++11 -o CMakeFiles\\Exam_exe.dir\\examDetails.cpp.obj -c \"C:\\Users\\Tom\\OneDrive - Technion\\Studies\\Semester B\\234124 - Matam - Intro to Systems Programing\\3. Homework\\HW02\\mtm-hw2\\partA\\examDetails.cpp\"",
+  "file": "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partA/examDetails.cpp"
+},
+{
+  "directory": "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partA/build",
+  "command": "C:\\TDM-GCC-64\\bin\\g++.exe   -g -std=gnu++11 -o CMakeFiles\\Exam_exe.dir\\part_a_test.cpp.obj -c \"C:\\Users\\Tom\\OneDrive - Technion\\Studies\\Semester B\\234124 - Matam - Intro to Systems Programing\\3. Homework\\HW02\\mtm-hw2\\partA\\part_a_test.cpp\"",
+  "file": "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partA/part_a_test.cpp"
+}
+]
