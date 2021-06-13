@@ -143,31 +143,7 @@ namespace mtm {
                     board_string[i][j] = ' ';
                 }
                 else{
-                    std::string character_type = typeid(*character).name();
-                    if (character_type == "Soldier"){
-                        if (character->getTeam() == POWERLIFTERS) {
-                            board_string[i][j] = 'S';
-                        }
-                        else {
-                            board_string[i][j] = 's';
-                        }
-                    }
-                    else if (character_type == "Medic"){
-                        if (character->getTeam() == POWERLIFTERS) {
-                            board_string[i][j] = 'M';
-                        }
-                        else {
-                            board_string[i][j] = 'm';
-                        }
-                    }
-                    else if (character_type == "Sniper"){
-                        if (character->getTeam() == POWERLIFTERS) {
-                            board_string[i][j] = 'S';
-                        }
-                        else {
-                            board_string[i][j] = 's';
-                        }
-                    }
+                    board_string[i][j] = character.returnCharacterLetter();
                 }
             }
         }
