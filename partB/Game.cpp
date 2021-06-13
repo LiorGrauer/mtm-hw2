@@ -55,15 +55,68 @@ namespace mtm {
     }
 
     void Game::move(const GridPoint & src_coordinates, const GridPoint & dst_coordinates){
-
+        if(outOfBoard(src_coordinates) || outOfBoard(dst_coordinates)){
+            throw IllegalCell();
+        }
+        if(board.at(src_coordinates.row).at(src_coordinates.col) == nullptr){
+            throw CellEmpty();
+        }
+        if(!(board.at(src_coordinates.row).at(src_coordinates.col)
+            ->checkMove(src_coordinates,dst_coordinates))){
+            throw MoveTooFar();
+        }
+        if (board.at(dst_coordinates.row).at(dst_coordinates.col) != nullptr){
+            throw CellOccupied();
+        }
+        board.at(dst_coordinates.row).at(dst_coordinates.col) = 
+            board.at(src_coordinates.row).at(src_coordinates.col);
+        board.at(src_coordinates.row).at(src_coordinates.col) = nullptr;
     }
 
     void Game::attack(const GridPoint & src_coordinates, const GridPoint & dst_coordinates){
-
+        if(outOfBoard(src_coordinates) || outOfBoard(dst_coordinates)){
+            throw IllegalCell();
+        }
+        if(board.at(src_coordinates.row).at(src_coordinates.col) == nullptr){
+            throw CellEmpty();
+        }
+        bool occupied = board.at(dst_coordinates.row).at(dst_coordinates.col)
+                        == nullptr ? false : true;
+        if(!(board.at(src_coordinates.row).at(src_coordinates.col)->
+            checkAttack(src_coordinates,dst_coordinates,
+            occupied, (occupied) ?
+            board.at(dst_coordinates.row).at(dst_coordinates.col)->getTeam()
+             : CROSSFITTERS))){ //if dst is not occupied the team dosent affect the function
+            return;
+        }
+        int incidential_range = board.at(src_coordinates.row).at(src_coordinates.col)->
+            getIncidentalDamageRange();
+        for(int i=incidential_range; i>=-incidential_range; i--){
+            for(int j=incidential_range; j>=-incidential_range; j--){
+                if(outOfBoard(GridPoint(dst_coordinates.row+i,dst_coordinates.col+j))){
+                    continue;
+                }
+                occupied = board.at(dst_coordinates.row).at(dst_coordinates.col)
+                        == nullptr ? false : true;
+                if(occupied){
+                board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->
+                    changeHealth(board.at(src_coordinates.row+i).at(src_coordinates.col+j)->
+                    attack(GridPoint(dst_coordinates.row,dst_coordinates.col),
+                    GridPoint(dst_coordinates.row+i,dst_coordinates.col+j),
+                    board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->getTeam()));
+                }
+            }
+        }
     }
 
     void Game::reload(const GridPoint & coordinates){
-
+        if(outOfBoard(coordinates)){
+            throw IllegalCell();
+        }
+        if(board.at(coordinates.row).at(coordinates.col) == nullptr){
+            throw CellEmpty();
+        }
+        board.at(coordinates.row).at(coordinates.col)->load();
     }
 
     std::ostream& Game::printGameBoard(std::ostream& os, const char* begin, 
