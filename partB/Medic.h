@@ -23,6 +23,7 @@ namespace mtm{
             units_t attack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team) override;
             Character* clone() const override;
+            char returnCharacterLetter() const override;
     };
     
 }

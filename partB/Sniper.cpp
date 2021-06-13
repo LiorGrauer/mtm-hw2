@@ -49,4 +49,12 @@ namespace mtm{
         return new Sniper(*this);
     }
 
+    char Sniper::returnCharacterLetter() const {
+        if(getTeam() == POWERLIFTERS){
+            return 'N';
+        } else {
+            return 'n';
+        }
+    }
+
 }

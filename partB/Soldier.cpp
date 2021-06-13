@@ -56,4 +56,12 @@ namespace mtm{
         return new Soldier(*this);
     }
 
+    char Soldier::returnCharacterLetter() const{
+        if(getTeam() == POWERLIFTERS){
+            return 'S';
+        } else {
+            return 's';
+        }
+    }
+
 }

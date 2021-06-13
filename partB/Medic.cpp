@@ -49,5 +49,13 @@ namespace mtm{
     Character* Medic::clone() const{
         return new Medic(*this);
     }
+
+    char Medic::returnCharacterLetter() const{
+        if(getTeam() == POWERLIFTERS){
+            return 'M';
+        } else {
+            return 'm';
+        }
+    }
     
 }
