@@ -127,7 +127,7 @@ namespace mtm{
         }
         while(ptr->getNext()){
             if(t < ptr->getNext()->getData()){
-                new_node_ptr->setNext(ptr);
+                new_node_ptr->setNext(ptr->getNext());
                 ptr->setNext(new_node_ptr);
                 size++;
                 return;
