@@ -19,7 +19,7 @@ namespace mtm{
                 team(team), health(health), ammo(ammo), range(range), power(power) {};
             Character& operator=(const Character& character) = delete;
             Character(const Character& character) = default;
-            virtual ~Character() {};
+            virtual ~Character() = default;
             units_t getRange() const{
                 return range;
             };

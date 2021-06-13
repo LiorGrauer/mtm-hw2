@@ -7,10 +7,14 @@ namespace mtm {
         if (height < 1 || width < 1){
             throw IllegalArgument();
         }
-        board.resize(height);
-        for (vector<std::shared_ptr<Character>> row : board){
-            row.assign(width, nullptr);
+        //board.resize(height);
+        for (int i=0; i<height; i++){
+            vector<std::shared_ptr<Character>> row_vector(width, nullptr);
+            board.push_back(row_vector);
         }
+        /*for (vector<std::shared_ptr<Character>> row : board){
+            row.resize(width, nullptr);
+        }*/
     }
 
     Game::Game(const Game& other){
@@ -34,9 +38,10 @@ namespace mtm {
         if (outOfBoard(coordinates)){
             throw IllegalCell();
         }
-        if (board.at(coordinates.row).at(coordinates.col) != nullptr){
+        if (board.at(coordinates.row-1).at(coordinates.col-1) != nullptr){
             throw CellOccupied();
         }
+        board.at(coordinates.row-1).at(coordinates.col-1) = character;
     }
 
     std::shared_ptr<Character> Game::makeCharacter(CharacterType type, Team team, 
@@ -46,10 +51,17 @@ namespace mtm {
         }
         std::shared_ptr<Character> new_character;
         switch (type) {
-            case SOLDIER: new_character = std::shared_ptr<Character>(new Soldier(team, health, ammo, range, power));
-            case MEDIC: new_character = std::shared_ptr<Character>(new Medic(team, health, ammo, range, power));
-            case SNIPER: new_character = std::shared_ptr<Character>(new Sniper(team, health, ammo, range, power));
-            default: new_character = std::shared_ptr<Character>(nullptr);
+            case SOLDIER: 
+                new_character = std::shared_ptr<Character>(new Soldier(team, health, ammo, range, power)); 
+                break;
+            case MEDIC: 
+                new_character = std::shared_ptr<Character>(new Medic(team, health, ammo, range, power));
+                break;
+            case SNIPER: 
+                new_character = std::shared_ptr<Character>(new Sniper(team, health, ammo, range, power));
+                break;
+            default: 
+                new_character = std::shared_ptr<Character>(nullptr);
         }
         return new_character;                                                  
     }
