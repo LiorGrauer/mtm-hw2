@@ -1,4 +1,4 @@
-#include "./Game.h";
+#include "./Game.h"
 
 namespace mtm {
     Game::Game(int height, int width) :

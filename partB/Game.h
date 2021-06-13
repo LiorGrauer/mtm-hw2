@@ -1,13 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "./Auxiliaries.h";
-#include "./Exceptions.h";
-#include "./Character.h";
+#include "./Auxiliaries.h"
+#include "./Exceptions.h"
+#include "./Character.h"
 //needed?
-#include "./Medic.h";
-#include "./Soldier.h";
-#include "./Sniper.h";
+#include "./Medic.h"
+#include "./Soldier.h"
+#include "./Sniper.h"
 #include <memory>
 #include <vector>
 
