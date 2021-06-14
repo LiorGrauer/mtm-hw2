@@ -2,8 +2,6 @@
 #define SOLDIER_H
 
 #include "./Character.h"
-#include "./Auxiliaries.h"
-#include "./Exceptions.h"
 
 namespace mtm{
 
