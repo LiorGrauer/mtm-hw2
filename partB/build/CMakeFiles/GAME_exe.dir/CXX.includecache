@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.cpp
-Auxiliaries.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
-
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
 iostream
 -
@@ -23,12 +19,6 @@ C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Character.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Auxiliaries.h
 ./Exceptions.h
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
-
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.cpp
-Exceptions.h
-C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
-string
--
 
 C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partB/Exceptions.h
 exception

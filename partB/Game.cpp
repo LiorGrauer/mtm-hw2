@@ -38,6 +38,13 @@ namespace mtm {
         height = other.height;
         width = other.width;
         board = other.board;
+        for (int i=0; i<height; i++){
+            for (int j=0; j<width; j++){
+                if (BOARD_AT(i,j) != nullptr){
+                    BOARD_AT(i,j) = std::shared_ptr<Character>(other.BOARD_AT(i,j)->clone());
+                }
+            }
+        }
         return *this;
     }
 
