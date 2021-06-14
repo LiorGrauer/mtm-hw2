@@ -15,7 +15,7 @@ namespace mtm{
             units_t health, ammo;
 
         public:
-            Character(Team team, units_t range, units_t power, units_t health,units_t ammo) :
+            Character(Team team, units_t health, units_t ammo, units_t range ,units_t power) :
                 team(team), range(range), power(power), health(health), ammo(ammo){};
             Character& operator=(const Character& character) = delete;
             Character(const Character& character) = default;
