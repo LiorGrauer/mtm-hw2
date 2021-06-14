@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partA/build",
+  "command": "C:\\PROGRA~1\\CODEBL~1\\MinGW\\bin\\X86_64~2.EXE    -g   -std=gnu++11 -o CMakeFiles\\Exam_exe.dir\\examDetails.cpp.obj -c \"C:\\Users\\liorg\\OneDrive - Technion\\Documents\\GitHub\\mtm-hw2\\partA\\examDetails.cpp\"",
+  "file": "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partA/examDetails.cpp"
+},
+{
+  "directory": "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partA/build",
+  "command": "C:\\PROGRA~1\\CODEBL~1\\MinGW\\bin\\X86_64~2.EXE    -g   -std=gnu++11 -o CMakeFiles\\Exam_exe.dir\\part_a_test.cpp.obj -c \"C:\\Users\\liorg\\OneDrive - Technion\\Documents\\GitHub\\mtm-hw2\\partA\\part_a_test.cpp\"",
+  "file": "C:/Users/liorg/OneDrive - Technion/Documents/GitHub/mtm-hw2/partA/part_a_test.cpp"
+}
+]
