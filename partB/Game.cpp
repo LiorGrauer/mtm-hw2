@@ -32,6 +32,9 @@ namespace mtm {
     }
 
     Game& Game::operator=(const Game& other){
+        if (this == &other) {
+            return *this;
+        }
         height = other.height;
         width = other.width;
         board = other.board;
