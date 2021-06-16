@@ -11,15 +11,14 @@ namespace mtm{
     }
 
     void Sniper::load(){
-        ammo+=SNIPER_AMMO_LOAD;
+        ammo += SNIPER_AMMO_LOAD;
     }
 
     bool Sniper::checkAttack(GridPoint src_point, GridPoint dst_point,
                             bool occupied, Team dst_point_team){
         double double_range = getRange();
         if((GridPoint::distance(src_point,dst_point)>getRange()) ||
-            (GridPoint::distance(src_point,dst_point)
-            <ceil(double_range/SNIPER_MINIMAL_RANGE_DIVIDER))){
+            (GridPoint::distance(src_point,dst_point) < ceil(double_range/SNIPER_MINIMAL_RANGE_DIVIDER))){
             throw OutOfRange();
         }
         if(ammo<SNIPER_AMMO_ATTACK)
@@ -29,7 +28,7 @@ namespace mtm{
         if((!occupied) || (dst_point_team == getTeam())){
             throw IllegalTarget();
         }
-        ammo-=SNIPER_AMMO_ATTACK;
+        ammo -= SNIPER_AMMO_ATTACK;
         hits_counter++;
         return true;
     }
