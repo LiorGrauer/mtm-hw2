@@ -14,8 +14,8 @@ namespace mtm{
     class Soldier : public Character {
         public:
             Soldier(Team team, units_t health, units_t ammo, units_t range,units_t power) :
-                Character(team, health, ammo, range, power) {}
-            ~Soldier() {};
+                Character(team, health, ammo, range, power) {};
+            ~Soldier() = default;
             bool checkMove(GridPoint src_point, GridPoint dst_point) override;
             void load() override;
             bool checkAttack(GridPoint src_point, GridPoint dst_point,
@@ -26,7 +26,6 @@ namespace mtm{
             Character* clone() const override;
             char returnCharacterLetter() const override;
     };
-    
 }
 
 #endif

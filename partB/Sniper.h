@@ -14,11 +14,11 @@ namespace mtm{
 
     class Sniper : public Character {
         private:
-            int hits_counter = 0;
+            int hits_counter;
         public:
             Sniper(Team team, units_t health, units_t ammo, units_t range,units_t power) :
-                Character(team, health, ammo, range, power) {}
-            ~Sniper() {};
+                Character(team, health, ammo, range, power), hits_counter(0) {};
+            ~Sniper() = default;
             bool checkMove(GridPoint src_point, GridPoint dst_point) override;
             void load() override;
             bool checkAttack(GridPoint src_point, GridPoint dst_point,

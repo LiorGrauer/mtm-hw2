@@ -11,15 +11,13 @@
 #include <memory>
 #include <vector>
 
-using std::vector;
-
 namespace mtm {
     class Game {
         private:
             int height;
             int width;
-            vector<vector<std::shared_ptr<Character>>> board;
-            bool outOfBoard (const GridPoint& coordinates);
+            std::vector<std::vector<std::shared_ptr<Character>>> board;
+            bool outOfBoard (const GridPoint& coordinates) const;
 
         public:
             Game(int height, int width);

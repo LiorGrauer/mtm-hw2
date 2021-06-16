@@ -3,7 +3,7 @@
 namespace mtm{
 
     bool Medic::checkMove(GridPoint src_point, GridPoint dst_point) {
-        if(GridPoint::distance(src_point,dst_point)<=MEDIC_MOVE_DISTANCE){
+        if(GridPoint::distance(src_point,dst_point) <= MEDIC_MOVE_DISTANCE){
             return true;
         } else {
             return false;
@@ -14,16 +14,15 @@ namespace mtm{
         ammo += MEDIC_AMMO_LOAD;
     }
 
-    bool Medic::checkAttack(GridPoint src_point, GridPoint dst_point,
-                            bool occupied, Team dst_point_team){
-        if(GridPoint::distance(src_point,dst_point)>getRange()){
+    bool Medic::checkAttack(GridPoint src_point, GridPoint dst_point, bool occupied, Team dst_point_team){
+        if(GridPoint::distance(src_point,dst_point) > getRange()){
             throw OutOfRange();
         }
         if((dst_point_team != getTeam()) && (ammo < MEDIC_AMMO_ATTACK))
         {
             throw OutOfAmmo();
         }
-        if(!occupied || src_point==dst_point){
+        if(!occupied || src_point == dst_point){
             throw IllegalTarget();
         }
         if(dst_point_team != getTeam()){
@@ -34,14 +33,10 @@ namespace mtm{
 
     units_t Medic::executeAttack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team){
-        if(dst_point == damage_point){
-            if(damage_point_team != getTeam()){
-                return getPower();
-            } else {
-                return -getPower();
-            }
+        if(damage_point_team != getTeam()){
+            return getPower();
         } else {
-            return 0;
+            return -getPower();
         }
     }
 

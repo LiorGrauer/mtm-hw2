@@ -7,7 +7,7 @@
 namespace mtm{
     
     class Character{
-        private:
+        private: //not changes during game
             Team team;
             units_t range, power;
         
@@ -16,7 +16,7 @@ namespace mtm{
 
         public:
             Character(Team team, units_t health, units_t ammo, units_t range ,units_t power) :
-                team(team), range(range), power(power), health(health), ammo(ammo){};
+                team(team), range(range), power(power), health(health), ammo(ammo) {};
             Character& operator=(const Character& character) = delete;
             Character(const Character& character) = default;
             virtual ~Character() = default;
@@ -33,7 +33,7 @@ namespace mtm{
                 return team;
             };
             void changeHealth(int change){
-                health-=change;
+                health -= change;
             };
             virtual bool checkMove(GridPoint src_point, GridPoint dst_point) = 0;
             virtual void load() = 0;
