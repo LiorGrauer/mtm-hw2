@@ -68,7 +68,7 @@ namespace mtm {
     }
 
     ostream& operator<<(ostream& os, const ExamDetails& exam){
-        return (os << "Course number: " << exam.course_number << std::endl << "Time: " << exam.day << "." << exam.month
+        return (os << "Course Number: " << exam.course_number << std::endl << "Time: " << exam.day << "." << exam.month
                 << " at " << (int)exam.hour << ":" << ((exam.hour - (int)exam.hour < 1e-6)? "00" : "30") << std::endl 
                 << "Duration: " << exam.length << ":00" << std::endl << "Zoom Link: " << exam.link << std::endl);
     }
