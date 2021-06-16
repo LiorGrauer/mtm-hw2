@@ -152,19 +152,19 @@ CMakeFiles/GAME_exe.dir/Soldier.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GAME_exe.dir/Soldier.cpp.s"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\Soldier.cpp" -o CMakeFiles\GAME_exe.dir\Soldier.cpp.s
 
-CMakeFiles/GAME_exe.dir/gameTest.cpp.obj: CMakeFiles/GAME_exe.dir/flags.make
-CMakeFiles/GAME_exe.dir/gameTest.cpp.obj: ../gameTest.cpp
-CMakeFiles/GAME_exe.dir/gameTest.cpp.obj: CMakeFiles/GAME_exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GAME_exe.dir/gameTest.cpp.obj"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAME_exe.dir/gameTest.cpp.obj -MF CMakeFiles\GAME_exe.dir\gameTest.cpp.obj.d -o CMakeFiles\GAME_exe.dir\gameTest.cpp.obj -c "C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\gameTest.cpp"
+CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj: CMakeFiles/GAME_exe.dir/flags.make
+CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj: ../tests/autoGameTester.cpp
+CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj: CMakeFiles/GAME_exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj -MF CMakeFiles\GAME_exe.dir\tests\autoGameTester.cpp.obj.d -o CMakeFiles\GAME_exe.dir\tests\autoGameTester.cpp.obj -c "C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\tests\autoGameTester.cpp"
 
-CMakeFiles/GAME_exe.dir/gameTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GAME_exe.dir/gameTest.cpp.i"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\gameTest.cpp" > CMakeFiles\GAME_exe.dir\gameTest.cpp.i
+CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\tests\autoGameTester.cpp" > CMakeFiles\GAME_exe.dir\tests\autoGameTester.cpp.i
 
-CMakeFiles/GAME_exe.dir/gameTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GAME_exe.dir/gameTest.cpp.s"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\gameTest.cpp" -o CMakeFiles\GAME_exe.dir\gameTest.cpp.s
+CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Tom\OneDrive - Technion\Studies\Semester B\234124 - Matam - Intro to Systems Programing\3. Homework\HW02\mtm-hw2\partB\tests\autoGameTester.cpp" -o CMakeFiles\GAME_exe.dir\tests\autoGameTester.cpp.s
 
 # Object files for target GAME_exe
 GAME_exe_OBJECTS = \
@@ -174,7 +174,7 @@ GAME_exe_OBJECTS = \
 "CMakeFiles/GAME_exe.dir/Medic.cpp.obj" \
 "CMakeFiles/GAME_exe.dir/Sniper.cpp.obj" \
 "CMakeFiles/GAME_exe.dir/Soldier.cpp.obj" \
-"CMakeFiles/GAME_exe.dir/gameTest.cpp.obj"
+"CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj"
 
 # External object files for target GAME_exe
 GAME_exe_EXTERNAL_OBJECTS =
@@ -185,7 +185,7 @@ GAME_exe.exe: CMakeFiles/GAME_exe.dir/Game.cpp.obj
 GAME_exe.exe: CMakeFiles/GAME_exe.dir/Medic.cpp.obj
 GAME_exe.exe: CMakeFiles/GAME_exe.dir/Sniper.cpp.obj
 GAME_exe.exe: CMakeFiles/GAME_exe.dir/Soldier.cpp.obj
-GAME_exe.exe: CMakeFiles/GAME_exe.dir/gameTest.cpp.obj
+GAME_exe.exe: CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj
 GAME_exe.exe: CMakeFiles/GAME_exe.dir/build.make
 GAME_exe.exe: CMakeFiles/GAME_exe.dir/linklibs.rsp
 GAME_exe.exe: CMakeFiles/GAME_exe.dir/objects1.rsp

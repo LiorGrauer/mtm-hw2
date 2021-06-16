@@ -14,7 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Medic.cpp" "CMakeFiles/GAME_exe.dir/Medic.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Medic.cpp.obj.d"
   "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Sniper.cpp" "CMakeFiles/GAME_exe.dir/Sniper.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Sniper.cpp.obj.d"
   "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Soldier.cpp" "CMakeFiles/GAME_exe.dir/Soldier.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/Soldier.cpp.obj.d"
-  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/gameTest.cpp" "CMakeFiles/GAME_exe.dir/gameTest.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/gameTest.cpp.obj.d"
+  "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/tests/autoGameTester.cpp" "CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj" "gcc" "CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj.d"
   )
 
 # Targets to which this target links.

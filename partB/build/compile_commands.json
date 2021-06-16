@@ -31,7 +31,7 @@
 },
 {
   "directory": "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/build",
-  "command": "C:\\TDM-GCC-64\\bin\\g++.exe   -g -std=gnu++11 -o CMakeFiles\\GAME_exe.dir\\gameTest.cpp.obj -c \"C:\\Users\\Tom\\OneDrive - Technion\\Studies\\Semester B\\234124 - Matam - Intro to Systems Programing\\3. Homework\\HW02\\mtm-hw2\\partB\\gameTest.cpp\"",
-  "file": "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/gameTest.cpp"
+  "command": "C:\\TDM-GCC-64\\bin\\g++.exe   -g -std=gnu++11 -o CMakeFiles\\GAME_exe.dir\\tests\\autoGameTester.cpp.obj -c \"C:\\Users\\Tom\\OneDrive - Technion\\Studies\\Semester B\\234124 - Matam - Intro to Systems Programing\\3. Homework\\HW02\\mtm-hw2\\partB\\tests\\autoGameTester.cpp\"",
+  "file": "C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/tests/autoGameTester.cpp"
 }
 ]

@@ -839,8 +839,8 @@ CMakeFiles/GAME_exe.dir/Soldier.cpp.obj
  C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h
  C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Exceptions.h
 
-CMakeFiles/GAME_exe.dir/gameTest.cpp.obj
- C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/gameTest.cpp
+CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj
+ C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/tests/autoGameTester.cpp
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/iostream
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h
@@ -981,10 +981,7 @@ CMakeFiles/GAME_exe.dir/gameTest.cpp.obj
  C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h
  C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Exceptions.h
  C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Character.h
- C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Auxiliaries.h
- C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Exceptions.h
  C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Medic.h
- C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Character.h
  C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Soldier.h
  C:/Users/Tom/OneDrive - Technion/Studies/Semester B/234124 - Matam - Intro to Systems Programing/3. Homework/HW02/mtm-hw2/partB/Sniper.h
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/memory
