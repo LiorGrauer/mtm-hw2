@@ -93,16 +93,16 @@ namespace mtm {
         if(BOARD_AT(src_coordinates.row,src_coordinates.col) == nullptr){
             throw CellEmpty();
         }
-        if(!(BOARD_AT(src_coordinates.row,src_coordinates.col)
-            ->checkMove(src_coordinates,dst_coordinates))){
+        if(!(BOARD_AT(src_coordinates.row,src_coordinates.col)->checkMove(src_coordinates,dst_coordinates))){
             throw MoveTooFar();
         }
-        if (BOARD_AT(dst_coordinates.row,dst_coordinates.col) != nullptr){
+        if (BOARD_AT(dst_coordinates.row,dst_coordinates.col) != nullptr && !(src_coordinates == dst_coordinates)){
             throw CellOccupied();
         }
-        BOARD_AT(dst_coordinates.row,dst_coordinates.col) = 
-            BOARD_AT(src_coordinates.row,src_coordinates.col);
-        BOARD_AT(src_coordinates.row,src_coordinates.col) = nullptr;
+        if (!(src_coordinates == dst_coordinates)){
+            BOARD_AT(dst_coordinates.row,dst_coordinates.col) = BOARD_AT(src_coordinates.row,src_coordinates.col);
+            BOARD_AT(src_coordinates.row,src_coordinates.col) = nullptr;
+        }   
     }
 
     void Game::attack(const GridPoint & src_coordinates, const GridPoint & dst_coordinates){
