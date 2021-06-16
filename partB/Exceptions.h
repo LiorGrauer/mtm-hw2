@@ -5,6 +5,8 @@
 
 namespace mtm {
     class Exception: public std::exception {
+        public:
+            const char* what() const noexcept override = 0;
     };
 
     class IllegalArgument: public Exception {
