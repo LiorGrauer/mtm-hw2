@@ -174,23 +174,23 @@ namespace mtm{
     template<class T>
     template<class Condition>
     SortedList<T> SortedList<T>::filter(Condition c) const {
-        SortedList<T>* result = new SortedList<T>();
+        SortedList<T> result;
         for (typename SortedList<T>::const_iterator it = begin(); !(it == end()); ++it) {
             if (c(*it)) {
-                result->insert(*it);
+                result.insert(*it);
             }
         }
-        return *result;
+        return result;
     }
     
     template<class T>
     template<class Function>
     SortedList<T> SortedList<T>::apply(Function f) const {
-        SortedList<T>* result = new SortedList<T>();
+        SortedList<T> result;
         for (typename SortedList<T>::const_iterator it = begin(); !(it == end()); ++it) {
-            result->insert(f(*it));
+            result.insert(f(*it));
         }
-        return *result;
+        return result;
     }
 
     template <class T>

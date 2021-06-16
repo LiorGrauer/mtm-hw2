@@ -32,19 +32,9 @@ namespace mtm {
     }
 
     Game& Game::operator=(const Game& other){
-        if (this == &other) {
-            return *this;
-        }
         height = other.height;
         width = other.width;
         board = other.board;
-        for (int i=0; i<height; i++){
-            for (int j=0; j<width; j++){
-                if (BOARD_AT(i,j) != nullptr){
-                    BOARD_AT(i,j) = std::shared_ptr<Character>(other.BOARD_AT(i,j)->clone());
-                }
-            }
-        }
         return *this;
     }
 
@@ -97,15 +87,12 @@ namespace mtm {
             ->checkMove(src_coordinates,dst_coordinates))){
             throw MoveTooFar();
         }
-        if ((BOARD_AT(dst_coordinates.row,dst_coordinates.col) != nullptr)
-            && (!(src_coordinates == dst_coordinates))){
+        if (BOARD_AT(dst_coordinates.row,dst_coordinates.col) != nullptr){
             throw CellOccupied();
         }
-        if(!(src_coordinates == dst_coordinates)){
         BOARD_AT(dst_coordinates.row,dst_coordinates.col) = 
             BOARD_AT(src_coordinates.row,src_coordinates.col);
         BOARD_AT(src_coordinates.row,src_coordinates.col) = nullptr;
-        }
     }
 
     void Game::attack(const GridPoint & src_coordinates, const GridPoint & dst_coordinates){

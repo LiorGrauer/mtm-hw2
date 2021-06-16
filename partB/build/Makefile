@@ -272,29 +272,29 @@ Soldier.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAME_exe.dir\build.make CMakeFiles/GAME_exe.dir/Soldier.cpp.s
 .PHONY : Soldier.cpp.s
 
-tests/autoGameTester.obj: tests/autoGameTester.cpp.obj
-.PHONY : tests/autoGameTester.obj
+gameTest.obj: gameTest.cpp.obj
+.PHONY : gameTest.obj
 
 # target to build an object file
-tests/autoGameTester.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAME_exe.dir\build.make CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj
-.PHONY : tests/autoGameTester.cpp.obj
+gameTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAME_exe.dir\build.make CMakeFiles/GAME_exe.dir/gameTest.cpp.obj
+.PHONY : gameTest.cpp.obj
 
-tests/autoGameTester.i: tests/autoGameTester.cpp.i
-.PHONY : tests/autoGameTester.i
+gameTest.i: gameTest.cpp.i
+.PHONY : gameTest.i
 
 # target to preprocess a source file
-tests/autoGameTester.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAME_exe.dir\build.make CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.i
-.PHONY : tests/autoGameTester.cpp.i
+gameTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAME_exe.dir\build.make CMakeFiles/GAME_exe.dir/gameTest.cpp.i
+.PHONY : gameTest.cpp.i
 
-tests/autoGameTester.s: tests/autoGameTester.cpp.s
-.PHONY : tests/autoGameTester.s
+gameTest.s: gameTest.cpp.s
+.PHONY : gameTest.s
 
 # target to generate assembly for a file
-tests/autoGameTester.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAME_exe.dir\build.make CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.s
-.PHONY : tests/autoGameTester.cpp.s
+gameTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAME_exe.dir\build.make CMakeFiles/GAME_exe.dir/gameTest.cpp.s
+.PHONY : gameTest.cpp.s
 
 # Help Target
 help:
@@ -323,9 +323,9 @@ help:
 	@echo ... Soldier.obj
 	@echo ... Soldier.i
 	@echo ... Soldier.s
-	@echo ... tests/autoGameTester.obj
-	@echo ... tests/autoGameTester.i
-	@echo ... tests/autoGameTester.s
+	@echo ... gameTest.obj
+	@echo ... gameTest.i
+	@echo ... gameTest.s
 .PHONY : help
 
 

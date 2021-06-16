@@ -833,7 +833,7 @@ CMakeFiles/GAME_exe.dir/Soldier.cpp.obj: ../Soldier.cpp \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h \
   ../Exceptions.h
 
-CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj: ../tests/autoGameTester.cpp \
+CMakeFiles/GAME_exe.dir/gameTest.cpp.obj: ../gameTest.cpp \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/iostream \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -974,7 +974,10 @@ CMakeFiles/GAME_exe.dir/tests/autoGameTester.cpp.obj: ../tests/autoGameTester.cp
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h \
   ../Exceptions.h \
   ../Character.h \
+  ../Auxiliaries.h \
+  ../Exceptions.h \
   ../Medic.h \
+  ../Character.h \
   ../Soldier.h \
   ../Sniper.h \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/memory \
@@ -1349,7 +1352,7 @@ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/vector.tcc:
 
 ../Soldier.cpp:
 
-../tests/autoGameTester.cpp:
+../gameTest.cpp:
 
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cassert:
 
