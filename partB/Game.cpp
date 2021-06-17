@@ -85,9 +85,6 @@ namespace mtm {
         if(board.at(src_coordinates.row).at(src_coordinates.col) == nullptr){
             throw CellEmpty();
         }
-        if (src_coordinates == dst_coordinates){
-            return;
-        }
         if(!(board.at(src_coordinates.row).at(src_coordinates.col)->checkMove(src_coordinates,dst_coordinates))){
             throw MoveTooFar();
         }
