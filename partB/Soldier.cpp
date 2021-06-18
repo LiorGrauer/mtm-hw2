@@ -2,6 +2,24 @@
 
 namespace mtm{
 
+    /**
+     * chessAddTournament: add a new tournament to a chess system.
+     *
+     * @param chess - chess system to add the tournament to. Must be non-NULL.
+     * @param tournament_id - new tournament id. Must be positive, and unique.
+     * @param max_games_per_player - maximum number of games a player is allow to play in the specified tournament.
+     *                               Must be postivie/
+     * @param tournament_location - location in which the tournament take place. Must be non-empty.
+     *
+     * @return
+     *     CHESS_NULL_ARGUMENT - if chess/tournament_location are NULL.
+     *     CHESS_INVALID_ID - the tournament ID number is invalid.
+     *     CHESS_TOURNAMENT_ALREADY_EXISTS - if a tournament with the given id already exist.
+     *     CHESS_INVALID_LOCATION - if the name is empty or doesn't start with a capital letter (A -Z)
+     *                      followed by small letters (a -z) and spaces (' ').
+     *     CHESS_INVALID_MAX_GAMES - if the maximum number of games allowed is not positive
+     *     CHESS_SUCCESS - if tournament was added successfully.
+     */
     bool Soldier::checkMove(GridPoint src_point, GridPoint dst_point) {
         if(GridPoint::distance(src_point,dst_point) <= SOLDIER_MOVE_DISTANCE){
             return true;

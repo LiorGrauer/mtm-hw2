@@ -5,13 +5,13 @@
 #include "./Exceptions.h"
 
 namespace mtm{
-    
+    /** Character class declaration*/
     class Character{
-        private: //not changes during game
+        private:    //does not change during game
             Team team;
             units_t range, power;
         
-        protected:
+        protected:  //does change during game
             units_t health, ammo;
 
         public:
