@@ -20,28 +20,16 @@ namespace mtm{
             Character& operator=(const Character& character) = delete;
             Character(const Character& character) = default;
             virtual ~Character() = default;
-            units_t getRange() const{
-                return range;
-            };
-            units_t getPower() const{
-                return power;
-            };
-            units_t getHealth() const{
-                return health;
-            };
-            Team getTeam() const{
-                return team;
-            };
-            void changeHealth(int change){
-                health -= change;
-            };
+            units_t getRange() const;
+            units_t getPower() const;
+            units_t getHealth() const;
+            Team getTeam() const;
+            void changeHealth(int change);
             virtual bool checkMove(GridPoint src_point, GridPoint dst_point) = 0;
             virtual void load() = 0;
             virtual bool checkAttack(GridPoint src_point, GridPoint dst_point,
                                     bool occupied, Team dst_point_team) = 0;
-            virtual units_t getIncidentalDamageRange(){
-                return 0;
-            };
+            virtual units_t getIncidentalDamageRange();
             virtual units_t executeAttack(GridPoint dst_point, GridPoint damage_point,
                                     Team damage_point_team) = 0;
             virtual Character* clone() const = 0;
