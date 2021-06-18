@@ -110,6 +110,7 @@ namespace mtm{
             this->insert(ptr->getData());
             ptr=ptr->getNext();
         }
+        size=s.size;
         return *this;
     }
 
@@ -139,29 +140,27 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::remove(const const_iterator& iter){
-        Node<T>* ptr=head_node;
-        if(!ptr){
+        SortedList<T>::const_iterator it(this->begin());
+        if(it == this->end()){
             return;
         }
-        if (!(*iter < ptr->getData()) &&
-            !(ptr->getData() < *iter))
+        if (iter==it)
         {
-            head_node=ptr->getNext();
-            delete ptr;
+            head_node = head_node->getNext();
+            delete iter.ptr;
             size--;
             return;
         }
-        while(ptr->getNext()){
-            if(!(*iter < ptr->getNext()->getData()) &&
-                !(ptr->getNext()->getData() < *iter)){
+        Node<T>* ptr = head_node;
+        while(!(it == this->end())){
+            if(iter.ptr==it.ptr->getNext()){
                 ptr->setNext(ptr->getNext()->getNext());
-                delete ptr;
+                delete iter.ptr;
                 size--;
                 return;
             }
-            ptr->setNext(ptr->getNext());
-            delete ptr;
-            size--;
+            ptr = ptr->getNext();
+            it++;
         }
     }
 
