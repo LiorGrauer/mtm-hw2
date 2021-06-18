@@ -4,11 +4,12 @@
 #include "./Character.h"
 
 namespace mtm{
-
-    const int MEDIC_AMMO_ATTACK = 1;
-    const int MEDIC_AMMO_LOAD = 5;
+    /** Medic class consts declaration*/
+    const int MEDIC_AMMO_PER_ATTACK = 1;
+    const int MEDIC_AMMO_PER_LOAD = 5;
     const int MEDIC_MOVE_DISTANCE = 5;
 
+    /** Medic class declaration*/
     class Medic : public Character {
         public:
             Medic(Team team, units_t health, units_t ammo, units_t range,units_t power) :

@@ -35,7 +35,7 @@ namespace mtm{
      *                        if dst_point is null the team opposite to the src_point character team.
      *
      * @return
-     *     true if sniper in src_point can attack dst_point 
+     *     true if sniper in src_point can execute attack on dst_point 
      *     false if not
      */
     bool Sniper::checkAttack(GridPoint src_point, GridPoint dst_point,
