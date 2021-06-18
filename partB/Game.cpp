@@ -109,7 +109,6 @@ namespace mtm {
                 (board.at(src_coordinates.row).at(src_coordinates.col)->getTeam() == CROSSFITTERS) ? 
                 POWERLIFTERS : CROSSFITTERS))){
                         //if dst is not occupied the team dosent affect the function
-                        //waiting for answer in PIAZZA. now according to the PDF and Lior, not as Tom claims. the segel is in Lior's side currently
             return;
         }
         int incidential_range = board.at(src_coordinates.row).at(src_coordinates.col)->getIncidentalDamageRange();
