@@ -257,6 +257,9 @@ namespace mtm{
 
     template <class T>
     typename SortedList<T>::const_iterator SortedList<T>::const_iterator::operator++(int){
+        if (!ptr){
+            throw std::out_of_range("out_of_range");
+        }
         const_iterator result = *this; 
         ++*this; 
         return result;
