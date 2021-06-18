@@ -28,11 +28,11 @@ namespace mtm{
     /**
      * checkAttack: check if the soldier can execute the attack action.
      *
-     * @param src_point         - current position of the soldier on the board.
-     * @param dst_point         - destanation point of the attack.
-     * @param occupied          - bool variable that is true if dst_point contains character, false if null.
-     * @param dst_point_team    - the team of the character in the dst_point,
-     *                            if dst_point is null the team opposite to the src_point character team.
+     * @param src_point     - current position of the soldier on the board.
+     * @param dst_point     - destanation point of the attack.
+     * @param occupied      - bool variable that is true if dst_point contains character, false if null.
+     * @param dst_point_team- the team of the character in the dst_point,
+     *                        if dst_point is null the team opposite to the src_point character team.
      *
      * @return
      *     true if soldier in src_point can attack dst_point 

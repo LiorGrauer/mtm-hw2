@@ -4,14 +4,15 @@
 #include "./Character.h"
 
 namespace mtm{
-
-    const int SNIPER_AMMO_ATTACK = 1;
-    const int SNIPER_AMMO_LOAD = 2;
+    /** Soldier class consts declaration*/
+    const int SNIPER_AMMO_PER_ATTACK = 1;
+    const int SNIPER_AMMO_PER_LOAD = 2;
     const int SNIPER_MOVE_DISTANCE = 4;
     const int SNIPER_MINIMAL_RANGE_DIVIDER = 2;
     const int SNIPER_HITS_UNTIL_CRITICAL = 3;
     const int SNIPER_CRITICAL_MULTIPLIER = 2;
 
+    /** Soldier class declaration*/
     class Sniper : public Character {
         private:
             int hits_counter;
