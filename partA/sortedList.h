@@ -222,6 +222,7 @@ namespace mtm{
             ~const_iterator() = default;
             const_iterator& operator=(const const_iterator& iter);
             const_iterator& operator++();
+            const_iterator operator++(int);
             bool operator==(const const_iterator& iter) const;
             const T& operator*() const;
     };
@@ -255,6 +256,13 @@ namespace mtm{
     }
 
     template <class T>
+    typename SortedList<T>::const_iterator SortedList<T>::const_iterator::operator++(int){
+        const_iterator result = *this; 
+        ++*this; 
+        return result;
+    }
+
+    template <class T>  
     bool SortedList<T>::const_iterator::operator==(const const_iterator& iter) const{
         return ptr == iter.ptr;
     }
