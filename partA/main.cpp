@@ -1,5 +1,5 @@
 /*
- * (Version 1)
+ * (Version 2)
  *
  * Visit: mtmtests.website
  * Tests with Robert
@@ -7,11 +7,10 @@
  * Remember:    (1) Passing the below tests doesn't mean you will pass their tests.
  *              (2) Always check memory leak of your own implementation - Use the operation: valgrind ./your_excuted_project
  *                  check the above website for more about memory leak.
- *              (3) Update me on instagram (@rober_simaan) if you found something wrong with the tests.
  */
 
 /*
- * Make sure you already have the same files (sortedList.h, examDetails.h and examDetails.cpp)
+ * Make sure you already have the same files (examDetails.h and examDetails.cpp)
  * in the same folder that the file (mainR.cpp) is found.
  */
 #include <iostream>
@@ -29,7 +28,7 @@ using namespace mtm;
 #define PASSED_THE_(thing) to_the_file << "(Excellent) Passed the " << thing << "!" << endl;
 
 /*
- * C++ TESTS COURSE MATAM (214234) - SPRING 2020
+ * C++ TESTS COURSE MATAM (234214) - SPRING 2020
  * ---------------------------------------------
  * -------------------PART A--------------------
  * ----------------EXAM DETAILS-----------------
@@ -48,7 +47,7 @@ int main()
     ExamDetails exam2(104031, 12, 30, 23.5, 10000, "infy1m.com");
     ExamDetails exam3(104281, 9, 9, 9, 3, "infy2.com");
     ExamDetails exam4(104032, 10, 10, 10, 3, "infy2m.com");
-    ExamDetails exam5(-100000, 1, 1, 0, 1);
+    ExamDetails exam5(100000, 1, 1, 0, 1);
     PASSED_THE("ExamDetails Constructor (Version 1)")
     PASSED_THE_("ExamDetails Constructor (Version 1)")
 
@@ -182,12 +181,14 @@ int main()
     referenece_to_exam1.setLink("infy1.co.il/original");
     referenece_to_exam2.setLink("infy1m.co.il/original");
     referenece_to_exam3.setLink("infy2.co.il/original");
+    exam4.setLink("infy2m.co.il/original");
+    exam5.setLink("original");
     PASSED_THE("ExamDetails setLink Method")
     PASSED_THE_("ExamDetails setLink Method")
 
     test_counter++;
     LET_ME_TEST("ExamDetails getLink Method (Version 2.2) - Printing the updated link", test_counter)
-    LET_ME_TEST("ExamDetails getLink Method (Version 2.2) - Printing the updated link", test_counter)
+    LET_ME_TEST_("ExamDetails getLink Method (Version 2.2) - Printing the updated link", test_counter)
     cout << "Updated Original Infy 1 website: " << exam1.getLink() << endl;
     cout << "Updated Original Infy 1m website: " << exam2.getLink() << endl;
     cout << "Updated Original Infy 2 website: " << exam3.getLink() << endl;
@@ -213,7 +214,7 @@ int main()
 
     test_counter++;
     LET_ME_TEST("ExamDetails Subtract Operator (-)", test_counter)
-    LET_ME_TEST("ExamDetails Subtract Operator (-)", test_counter)
+    LET_ME_TEST_("ExamDetails Subtract Operator (-)", test_counter)
     cout << "((Infy 1 date) - (Infy 1 date)) = " << exam1-exam1 << " days" << endl;
     cout << "((Infy 1 date) - (Infy 1m date)) = " << exam1-exam2 << " days" << endl;
     cout << "((Infy 1m date) - (Infy 1 date)) = " << exam2-exam1 << " days" << endl;
@@ -241,7 +242,7 @@ int main()
 
     test_counter++;
     LET_ME_TEST("ExamDetails Statement Operator (<) (Version 1)", test_counter)
-    LET_ME_TEST("ExamDetails Statement Operator (<) (Version 1)", test_counter)
+    LET_ME_TEST_("ExamDetails Statement Operator (<) (Version 1)", test_counter)
     cout << "Is Infy 1 before Infy 1: " << ((exam1<exam1) ? "TRUE!" : "FALSE!") << endl;
     cout << "Is Infy 1 before Infy 1m: " << ((exam1<exam2) ? "TRUE!" : "FALSE!") << endl;
     cout << "Is Infy 1m before Infy 1: " << ((exam2<exam1) ? "TRUE!" : "FALSE!") << endl;
@@ -271,6 +272,7 @@ int main()
 
     test_counter++;
     LET_ME_TEST("ExamDetails Printing Method (Version 1)", test_counter)
+    LET_ME_TEST_("ExamDetails Printing Method (Version 1)", test_counter)
     cout << exam1 << endl;
     cout << exam2 << endl;
     cout << exam3 << endl;
@@ -280,6 +282,7 @@ int main()
     cout << copied_exam1 << endl;
     cout << copied_exam4 << endl;
     cout << copied_exam3 << endl;
+    cout << copied_exam5 << endl;
     cout << referenece_to_exam1 << endl;
     cout << referenece_to_exam2 << endl;
     cout << referenece_to_exam3;
@@ -292,48 +295,12 @@ int main()
     to_the_file << copied_exam1 << endl;
     to_the_file << copied_exam4 << endl;
     to_the_file << copied_exam3 << endl;
+    to_the_file << copied_exam5 << endl;
     to_the_file << referenece_to_exam1 << endl;
     to_the_file << referenece_to_exam2 << endl;
     to_the_file << referenece_to_exam3;
     PASSED_THE("ExamDetails Printing Method (Version 1)")
     PASSED_THE_("ExamDetails Printing Method (Version 1)")
-
-    test_counter++;
-    LET_ME_TEST("ExamDetails Constructor (Version 2) - The (10^-6) thing", test_counter)
-    LET_ME_TEST_("ExamDetails Constructor (Version 2) - The (10^-6) thing", test_counter)
-    ExamDetails almost_int_course_number(1.000001, 1, 1, 1, 1, "Course number converted to int");
-    ExamDetails almost_int_month_number(1, 1.000001, 1, 1, 1, "Month number converted to int");
-    ExamDetails almost_int_day_number(1, 1, 1.000001, 1, 1, "Day number converted to int");
-    ExamDetails almost_int_hour_number(1, 1, 1, 1.000001, 1, "Hour number converted to int");
-    ExamDetails almost_int_length(1, 1, 1, 1, 1, "Length number converted to int");
-    ExamDetails almost_int_overall(-1.000001, 1.000001, 1.000001, 1, 1.000001, "All converted to int");
-    PASSED_THE("ExamDetails Constructor (Version 2) - The (10^-6) thing")
-    PASSED_THE_("ExamDetails Constructor (Version 2) - The (10^-6) thing")
-
-    test_counter++;
-    LET_ME_TEST("ExamDetails Copy Constructor (Version 3) - The (10^-6) thing", test_counter)
-    LET_ME_TEST_("ExamDetails Copy Constructor (Version 3) - The (10^-6) thing", test_counter)
-    ExamDetails copied_almost_int = almost_int_overall;
-    PASSED_THE("ExamDetails Copy Constructor (Version 3) - The (10^-6) thing")
-    PASSED_THE_("ExamDetails Copy Constructor (Version 3) - The (10^-6) thing")
-
-    test_counter++;
-    LET_ME_TEST("ExamDetails Printing Method (Version 2) - The (10^-6) thing", test_counter)
-    LET_ME_TEST_("ExamDetails Printing Method (Version 2) - The (10^-6) thing", test_counter)
-    cout << almost_int_course_number << endl;
-    cout << almost_int_month_number << endl;
-    cout << almost_int_day_number << endl;
-    cout << almost_int_hour_number << endl;
-    cout << almost_int_length << endl;
-    cout << almost_int_overall;
-    to_the_file << almost_int_course_number << endl;
-    to_the_file << almost_int_month_number << endl;
-    to_the_file << almost_int_day_number << endl;
-    to_the_file << almost_int_hour_number << endl;
-    to_the_file << almost_int_length << endl;
-    to_the_file << almost_int_overall;
-    PASSED_THE("ExamDetails Printing Method (Version 2) - The (10^-6) thing")
-    PASSED_THE_("ExamDetails Printing Method (Version 2) - The (10^-6) thing")
 
     test_counter++;
     LET_ME_TEST("ExamDetails Exception - InvalidDateException() (Version 1)", test_counter)
@@ -380,46 +347,8 @@ int main()
         cout << "Invalid date - (day<0)" << endl;
         to_the_file << "Invalid date - (day<0)" << endl;
     }
-    try {
-        ExamDetails invalid_date7(1, 1.5, 1, 1, 1, "https://tinyurl.com/ym8wf46t");
-    }
-    catch (ExamDetails::InvalidDateException& e) {
-        cout << "Invalid date - (month is not an integer)" << endl;
-        to_the_file << "Invalid date - (month is not an integer)" << endl;
-    }
-    try {
-        ExamDetails invalid_date8(1, 1, 1.5, 1, 1, "https://tinyurl.com/ym8wf46t");
-    }
-    catch (ExamDetails::InvalidDateException& e) {
-        cout << "Invalid date - (day is not an integer)" << endl;
-        to_the_file << "Invalid date - (day is not an integer)" << endl;
-    }
     PASSED_THE("ExamDetails Exception - InvalidDateException() (Version 1)")
     PASSED_THE_("ExamDetails Exception - InvalidDateException() (Version 1)")
-
-    test_counter++;
-    LET_ME_TEST("ExamDetails Exception - InvalidDateException() (Version 2) - The (10^-6) thing", test_counter)
-    LET_ME_TEST_("ExamDetails Exception - InvalidDateException() (Version 2) - The (10^-6) thing", test_counter)
-    try {
-        ExamDetails valid_date1(1, 12.000000999, 1, 1, 1, "https://tinyurl.com/ym8wf46t");
-        cout << "SUCCESS" << endl;
-        to_the_file << "SUCCESS" << endl;
-    }
-    catch (ExamDetails::InvalidDateException& e) {
-        cout << "ERROR: Should convert the month to 12" << endl;
-        to_the_file << "ERROR: Should convert the month to 12" << endl;
-    }
-    try {
-        ExamDetails valid_date2(1, 1, 30.000000999, 1, 1, "https://tinyurl.com/ym8wf46t");
-        cout << "SUCCESS" << endl;
-        to_the_file << "SUCCESS" << endl;
-    }
-    catch (ExamDetails::InvalidDateException& e) {
-        cout << "ERROR: Should convert the day to 30" << endl;
-        to_the_file << "ERROR: Should convert the day to 30" << endl;
-    }
-    PASSED_THE("ExamDetails Exception - InvalidDateException() (Version 2) - The (10^-6) thing")
-    PASSED_THE_("ExamDetails Exception - InvalidDateException() (Version 2) - The (10^-6) thing")
 
     test_counter++;
     LET_ME_TEST("ExamDetails Exception - InvalidTimeException()", test_counter)
@@ -432,79 +361,38 @@ int main()
         to_the_file << "Invalid hour - (hour<0)" << endl;
     }
     try {
-        ExamDetails invalid_hour2(1, 1, 1, 0.49, 1, "https://tinyurl.com/ym8wf46t");
+        ExamDetails invalid_hour2(1, 1, 1, 24, 1, "https://tinyurl.com/ym8wf46t");
     }
     catch (ExamDetails::InvalidTimeException& e) {
-        cout << "Invalid hour - the hour should equals to (0.5*K) where as K is an Natural" << endl;
-        to_the_file << "Invalid hour - the hour should equals to (0.5*K) where as K is an Natural" << endl;
-    }
-    try {
-        ExamDetails invalid_hour3(1, 1, 1, 10000.51, 1, "https://tinyurl.com/ym8wf46t");
-    }
-    catch (ExamDetails::InvalidTimeException& e) {
-        cout << "Invalid hour - the hour should equals to (0.5*K) where as K is an Natural" << endl;
-        to_the_file << "Invalid hour - the hour should equals to (0.5*K) where as K is an Natural" << endl;
+        cout << "Invalid hour - (hour>23.5))" << endl;
+        to_the_file << "Invalid hour - (hour>23.5))" << endl;
     }
     PASSED_THE("ExamDetails Exception - InvalidTimeException()")
     PASSED_THE_("ExamDetails Exception - InvalidTimeException()")
 
     test_counter++;
-    LET_ME_TEST("ExamDetails Exception - InvalidArgsException()", test_counter)
-    LET_ME_TEST_("ExamDetails Exception - InvalidArgsException()", test_counter)
-    try {
-        ExamDetails invalid_arg1(1.1, 1, 1, 1, 1, "https://tinyurl.com/ym8wf46t");
-    }
-    catch (ExamDetails::InvalidArgsException& e) {
-        cout << "Invalid Course Number - (course number is not an integer)" << endl;
-        to_the_file << "Invalid Course Number - (course number is not an integer)" << endl;
-    }
-    try {
-        ExamDetails invalid_arg2(1, 1, 1, 1, 1.1, "https://tinyurl.com/ym8wf46t");
-    }
-    catch (ExamDetails::InvalidArgsException& e) {
-        cout << "Invalid Exam Length - the exam length is not an integer" << endl;
-        to_the_file << "Invalid Exam Length - the exam length is not an integer" << endl;
-    }
-    PASSED_THE("ExamDetails Exception - InvalidArgsException()")
-    PASSED_THE_("ExamDetails Exception - InvalidArgsException()")
-
-    test_counter++;
     LET_ME_TEST("ExamDetails Exception - Exceptions Order", test_counter)
     LET_ME_TEST_("ExamDetails Exception - Exceptions Order", test_counter)
     try {
-        ExamDetails exceptions_order1(1.1, 1.1, 1.1, 1.1, 1.1, "https://tinyurl.com/ym8wf46t");
-    }
-    catch (ExamDetails::InvalidArgsException& e) {
-        cout << "Priority to ArgsException - Course number is invalid" << endl;
-        to_the_file << "Priority to ArgsException - Course number is invalid" << endl;
-    }
-    try {
-        ExamDetails exceptions_order2(1, 1.1, 1.1, 1.1, 1.1, "https://tinyurl.com/ym8wf46t");
+        ExamDetails exceptions_order2(1, 0, 1, 24, 1, "https://tinyurl.com/ym8wf46t");
     }
     catch (ExamDetails::InvalidDateException& e) {
         cout << "Priority to DateException - Month number is invalid" << endl;
         to_the_file << "Priority to DateException - Month number is invalid" << endl;
     }
     try {
-        ExamDetails exceptions_order3(1, 1, 1.1, 1.1, 1.1, "https://tinyurl.com/ym8wf46t");
+        ExamDetails exceptions_order3(1, 1, 31, 24, 1, "https://tinyurl.com/ym8wf46t");
     }
     catch (ExamDetails::InvalidDateException& e) {
         cout << "Priority to DateException - Day number is invalid" << endl;
         to_the_file << "Priority to DateException - Day number is invalid" << endl;
     }
     try {
-        ExamDetails exceptions_order4(1, 1, 1, 1.1, 1.1, "https://tinyurl.com/ym8wf46t");
+        ExamDetails exceptions_order4(1, 1, 1, 24, 1, "https://tinyurl.com/ym8wf46t");
     }
     catch (ExamDetails::InvalidTimeException& e) {
         cout << "Priority to TimeException - Hour number is invalid" << endl;
         to_the_file << "Priority to TimeException - Hour number is invalid" << endl;
-    }
-    try {
-        ExamDetails exceptions_order(1, 1, 1, 1, 1.1, "https://tinyurl.com/ym8wf46t");
-    }
-    catch (ExamDetails::InvalidArgsException& e) {
-        cout << "Priority to ArgsException - Length number is invalid" << endl;
-        to_the_file << "Priority to ArgsException - Length number is invalid" << endl;
     }
     PASSED_THE("ExamDetails Exception - Exceptions Order")
     PASSED_THE_("ExamDetails Exception - Exceptions Order")

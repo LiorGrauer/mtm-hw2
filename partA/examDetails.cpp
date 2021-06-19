@@ -23,7 +23,7 @@ namespace mtm {
         if (day < 1 || day > 30){
             throw ExamDetails::InvalidDateException();
         }
-        if (((hour - (int)hour) > 1e-6 && (hour - 0.5 - (int)hour) > 1e-6) || hour < 1e-6 || (hour - 24.5) > 1e-6){
+        if (((hour - (int)hour) > 1e-6 && (hour - 0.5 - (int)hour) > 1e-6) || hour < -1e-6 || (hour - 24.5) > 1e-6){
             throw ExamDetails::InvalidTimeException();
         }
     }

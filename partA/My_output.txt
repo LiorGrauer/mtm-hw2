@@ -38,17 +38,21 @@ Copied Empty String:
 
 (10) Testing the ExamDetails setLink Method...
 (Excellent) Passed the ExamDetails setLink Method!
+
+(11) Testing the ExamDetails getLink Method (Version 2.2) - Printing the updated link...
 Updated Original Infy 1 website: infy1.co.il/original
 Updated Original Infy 1m website: infy1m.co.il/original
 Updated Original Infy 2 website: infy2.co.il/original
-Updated Original Infy 2m website: infy2m.com
-Updated Original String website: 
+Updated Original Infy 2m website: infy2m.co.il/original
+Updated Original String website: original
 Updated Copied Infy 1 website: infy1.co.il/copied
 Updated Copied Infy 1m website: infy1m.co.il/copied
 Updated Copied Infy 2 website: infy2.co.il/copied
 Updated Copied Infy 2m website: infy2m.co.il/copied
 Updated Copied Empty String: Not Empty Anymore
 (Excellent) Passed the ExamDetails getLink Method (Version 2.2) - Printing the updated link!
+
+(12) Testing the ExamDetails Subtract Operator (-)...
 ((Infy 1 date) - (Infy 1 date)) = 0 days
 ((Infy 1 date) - (Infy 1m date)) = -359 days
 ((Infy 1m date) - (Infy 1 date)) = 359 days
@@ -61,6 +65,8 @@ Updated Copied Empty String: Not Empty Anymore
 ((Copied Infy 2m date) - (Copied Infy 2 date)) = 31 days
 ((Copied Empty String) - (Copied Infy 1)) = 0 days
 (Excellent) Passed the ExamDetails Subtract Operator (-)!
+
+(13) Testing the ExamDetails Statement Operator (<) (Version 1)...
 Is Infy 1 before Infy 1: FALSE!
 Is Infy 1 before Infy 1m: TRUE!
 Is Infy 1m before Infy 1: FALSE!
@@ -74,6 +80,8 @@ Is Copied Infy 1m before Copied Infy 2: FALSE!
 Is Copied Empty String before Copied Infy 1: FALSE!
 Is Reference to Infy1 before Infy 1: FALSE!
 (Excellent) Passed the ExamDetails Statement Operator (<) (Version 1)!
+
+(14) Testing the ExamDetails Printing Method (Version 1)...
 Course number: 104195
 Time: 1.1 at 0:00
 Duration: 1:00
@@ -92,12 +100,12 @@ Zoom Link: infy2.co.il/original
 Course number: 104032
 Time: 10.10 at 10:00
 Duration: 3:00
-Zoom Link: infy2m.com
+Zoom Link: infy2m.co.il/original
 
-Course number: -100000
+Course number: 100000
 Time: 1.1 at 0:00
 Duration: 1:00
-Zoom Link: 
+Zoom Link: original
 
 Course number: 104195
 Time: 1.1 at 0:00
@@ -119,6 +127,11 @@ Time: 10.10 at 10:00
 Duration: 3:00
 Zoom Link: infy2m.co.il/copied
 
+Course number: 100000
+Time: 1.1 at 0:00
+Duration: 1:00
+Zoom Link: Not Empty Anymore
+
 Course number: 104195
 Time: 1.1 at 0:00
 Duration: 1:00
@@ -135,75 +148,22 @@ Duration: 3:00
 Zoom Link: infy2.co.il/original
 (Excellent) Passed the ExamDetails Printing Method (Version 1)!
 
-(15) Testing the ExamDetails Constructor (Version 2) - The (10^-6) thing...
-(Excellent) Passed the ExamDetails Constructor (Version 2) - The (10^-6) thing!
-
-(16) Testing the ExamDetails Copy Constructor (Version 3) - The (10^-6) thing...
-(Excellent) Passed the ExamDetails Copy Constructor (Version 3) - The (10^-6) thing!
-
-(17) Testing the ExamDetails Printing Method (Version 2) - The (10^-6) thing...
-Course number: 1
-Time: 1.1 at 1:00
-Duration: 1:00
-Zoom Link: Course number converted to int
-
-Course number: 1
-Time: 1.1 at 1:00
-Duration: 1:00
-Zoom Link: Month number converted to int
-
-Course number: 1
-Time: 1.1 at 1:00
-Duration: 1:00
-Zoom Link: Day number converted to int
-
-Course number: 1
-Time: 1.1 at 1:00
-Duration: 1:00
-Zoom Link: Hour number converted to int
-
-Course number: 1
-Time: 1.1 at 1:00
-Duration: 1:00
-Zoom Link: Length number converted to int
-
-Course number: -1
-Time: 1.1 at 1:00
-Duration: 1:00
-Zoom Link: All converted to int
-(Excellent) Passed the ExamDetails Printing Method (Version 2) - The (10^-6) thing!
-
-(18) Testing the ExamDetails Exception - InvalidDateException() (Version 1)...
+(15) Testing the ExamDetails Exception - InvalidDateException() (Version 1)...
 Invalid date - (month=0)
 Invalid date - (day=0)
 Invalid date - (month>12)
 Invalid date - (day>30)
 Invalid date - (month<0)
 Invalid date - (day<0)
-Invalid date - (month is not an integer)
-Invalid date - (day is not an integer)
 (Excellent) Passed the ExamDetails Exception - InvalidDateException() (Version 1)!
 
-(19) Testing the ExamDetails Exception - InvalidDateException() (Version 2) - The (10^-6) thing...
-SUCCESS
-SUCCESS
-(Excellent) Passed the ExamDetails Exception - InvalidDateException() (Version 2) - The (10^-6) thing!
-
-(20) Testing the ExamDetails Exception - InvalidTimeException()...
+(16) Testing the ExamDetails Exception - InvalidTimeException()...
 Invalid hour - (hour<0)
-Invalid hour - the hour should equals to (0.5*K) where as K is an Natural
-Invalid hour - the hour should equals to (0.5*K) where as K is an Natural
+Invalid hour - (hour>23.5))
 (Excellent) Passed the ExamDetails Exception - InvalidTimeException()!
 
-(21) Testing the ExamDetails Exception - InvalidArgsException()...
-Invalid Course Number - (course number is not an integer)
-Invalid Exam Length - the exam length is not an integer
-(Excellent) Passed the ExamDetails Exception - InvalidArgsException()!
-
-(22) Testing the ExamDetails Exception - Exceptions Order...
-Priority to ArgsException - Course number is invalid
+(17) Testing the ExamDetails Exception - Exceptions Order...
 Priority to DateException - Month number is invalid
 Priority to DateException - Day number is invalid
 Priority to TimeException - Hour number is invalid
-Priority to ArgsException - Length number is invalid
 (Excellent) Passed the ExamDetails Exception - Exceptions Order!
