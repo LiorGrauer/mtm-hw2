@@ -292,14 +292,6 @@ namespace mtm{
      */
     template <class T>
     typename SortedList<T>::const_iterator SortedList<T>::end() const {
-        /*if (!head_node){
-            return const_iterator(head_node);
-        }
-        Node<T>* ptr = head_node;
-        while(ptr->getNext()){
-            ptr=ptr->getNext();
-        }
-        return const_iterator(ptr);*/
         return const_iterator(nullptr);
     }
 
