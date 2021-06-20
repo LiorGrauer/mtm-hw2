@@ -33,6 +33,8 @@ namespace mtm {
 
         public:
             Game(int height, int width);
+
+            /** Game default D'tor*/
             ~Game() = default;
             Game(const Game& other);
             Game& operator=(const Game& other);
