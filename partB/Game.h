@@ -51,6 +51,9 @@ namespace mtm {
              * @param coordinates - the coordinates of the checked grid point.
              * @param character   - shared pointer to the existing character.
              * 
+             * @throws IllegalCell    - if src or dst is out of board.
+             * @throws CellEmpty      - if there is no character in src.
+             * 
              */
             void addCharacter(const GridPoint& coordinates, std::shared_ptr<Character> character);
 
@@ -66,6 +69,9 @@ namespace mtm {
              * 
              * @return
              *     shared pointer to the character
+             * 
+             * @throws IllegalArgument - if health parameter is not a positive number
+             *                           or if ammo, range or power are negative numbers
              */
             static std::shared_ptr<Character> makeCharacter(CharacterType type, Team team, 
                                                             units_t health, units_t ammo, units_t range, units_t power);
@@ -76,7 +82,12 @@ namespace mtm {
              * @param src_coordinates   - the coordinates of the moving character.
              * @param dst_coordinates   - the coordinates of the location the character moves to.
              * 
-             *  
+             * @throws IllegalCell    - if src or dst is out of board.
+             * @throws CellEmpty      - if there is no character in src.
+             * @throws MoveTooFar     - Character checkMove will throw if the distance from.
+             *                          src to dst is bigger then the character move range.
+             * @throws CellIsOccupied - if dst all ready contains a character.
+             * 
              */
             void move(const GridPoint & src_coordinates, const GridPoint & dst_coordinates);
             
@@ -86,6 +97,14 @@ namespace mtm {
              * @param src_coordinates   - the coordinates of the attacking character.
              * @param dst_coordinates   - the coordinates of the attacked location.
              * 
+             * @throws IllegalCell   - if src or dst is out of board.
+             * @throws CellEmpty     - if there is no character in src.
+             * @throws OutOfRange    - Character checkAttack will throw if dst is not in the character range of attack.
+             * @throws OutOfAmmo     - Character checkAttack will throw if the character 
+             *                         does not have the ammo to preform attack.
+             * @throws IllegalTarget - Character checkAttack will throw if the attack does not meet the character
+             *                         conditions to preform the attck.
+             * 
              */
             void attack(const GridPoint & src_coordinates, const GridPoint & dst_coordinates);
             
@@ -94,9 +113,10 @@ namespace mtm {
              *
              * @param coordinates   - the coordinates of character type.
              * 
-             * @return
-             *     shared pointer to the character
-             *     false if it is inside the board
+             * 
+             * @throws IllegalCell   - if src or dst is out of board.
+             * @throws CellEmpty     - if there is no character in src.
+             * 
              */
             void reload(const GridPoint & coordinates);
             
@@ -108,15 +128,13 @@ namespace mtm {
              * @param end   - pointer to the last char in the board string.
              * @param width - the width of the board.
              * 
-             * @return
-             *     shared pointer to the character
-             *     false if it is inside the board
              */
             std::ostream& printGameBoard(std::ostream& os, const char* begin, 
                                          const char* end, unsigned int width) const;
             
             /**
              * operator<<: defines the print operator.
+             *             uppercase letter for Powerlifters and lower case for Crossfitters
              *
              * @param os     - the ostream, so we can pass it to the printBoardGame function.
              * @param game   - the game that need to be printed.
@@ -132,6 +150,10 @@ namespace mtm {
              * @return
              *     true if one of the teams won.
              *     false if none of the team won.
+             * 
+             * @return if winningTeam is nullptr the function does not enter
+             *         the winning team to the value of the pointer.
+             *         if it's not null then the winning team Enum will be inserted to the pointer value
              */
             bool isOver(Team* winningTeam=NULL) const;
     };

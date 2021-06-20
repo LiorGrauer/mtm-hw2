@@ -29,6 +29,8 @@ namespace mtm{
              * @return
              *     true if distance between src_point and dst_point is lower or equel to the medic move distance
              *     false if bigger
+             * 
+             * @throws MoveTooFar - if the distance from src to dst is bigger then the MEDIC_MOVE_DISTANCE.
              */
             bool checkMove(GridPoint src_point, GridPoint dst_point) override;
             
@@ -47,6 +49,13 @@ namespace mtm{
              * @return
              *     true if medic in src_point can execute attack on dst_point 
              *     false if not
+             * 
+             * @throws OutOfRange    - if dst is not in the medic range of attack.
+             * @throws OutOfAmmo     - if the medic does not have the ammo to preform attack. 
+             *                         if it is an enemy he needs MEDIC_AMMO_PER_ATTACK and if it is a friend
+             *                         then he dosen't need ammo to heal.
+             * @throws IllegalTarget - if dst is empty.
+             * 
              */
             bool checkAttack(GridPoint src_point, GridPoint dst_point, bool occupied, Team dst_point_team) override;
             

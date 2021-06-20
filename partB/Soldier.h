@@ -31,6 +31,9 @@ namespace mtm{
              * @return
              *     true if distance between src_point and dst_point is lower or equel to the soldier move distance
              *     false if bigger
+             * 
+             * @throws MoveTooFar - if the distance from src to dst is bigger then the SOLDIER_MOVE_DISTANCE.
+             * 
              */
             bool checkMove(GridPoint src_point, GridPoint dst_point) override;
 
@@ -49,6 +52,11 @@ namespace mtm{
              * @return
              *     true if soldier in src_point can execute attack on dst_point 
              *     false if not
+             * 
+             * @throws OutOfRange    - if dst is not in the soldier range.
+             * @throws OutOfAmmo     - if the soldier does not have SOLDIER_AMMO_PER_ATTACK to preform attack. 
+             * @throws IllegalTarget - if dst is not in the same col and not in the same row as src.
+             * 
              */
             bool checkAttack(GridPoint src_point, GridPoint dst_point, bool occupied, Team dst_point_team) override;\
 

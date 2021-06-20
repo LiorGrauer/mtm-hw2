@@ -34,6 +34,9 @@ namespace mtm{
              * @return
              *     true if distance between src_point and dst_point is lower or equel to the sniper move distance
              *     false if bigger
+             * 
+             * @throws MoveTooFar - if the distance from src to dst is bigger then the SNIPER_MOVE_DISTANCE.
+             * 
              */
             bool checkMove(GridPoint src_point, GridPoint dst_point) override;
 
@@ -52,6 +55,11 @@ namespace mtm{
              * @return
              *     true if sniper in src_point can execute attack on dst_point 
              *     false if not
+             * 
+             * @throws OutOfRange    - if dst is not in the sniper range or is less then at least ceil(range/2).
+             * @throws OutOfAmmo     - if the sniper does not have SNIPER_AMMO_PER_ATTACK to preform attack. 
+             * @throws IllegalTarget - if dst is empty or there is a friend there.
+             * 
              */
             bool checkAttack(GridPoint src_point, GridPoint dst_point, bool occupied, Team dst_point_team) override;
             
