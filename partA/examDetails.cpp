@@ -79,7 +79,8 @@ namespace mtm {
     }
 
     bool ExamDetails::operator<(const ExamDetails& exam) const{
-        return (month < exam.month) || (month == exam.month && day < exam.day);
+        return ((month < exam.month) || (month == exam.month && day < exam.day)
+                || (month == exam.month && day == exam.day && hour < exam.hour));
     }
 
     ostream& operator<<(ostream& os, const ExamDetails& exam){
