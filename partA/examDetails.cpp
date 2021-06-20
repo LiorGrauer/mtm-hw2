@@ -7,6 +7,18 @@ using std::string;
 using std::ostream;
 
 namespace mtm {
+    const int MONTH_IN_YEAR = 12;
+    const int DAYS_IN_MONTH = 30;
+    const int HOURS_IN_DAY = 24;
+    const double HALF_HOUR = 0.5;
+    const double DOUBLE_MARGIN_OF_ERROR = 1e-6; 
+    const int MATAM_COURSE_NUMBER = 234124;
+    const int MATAM_EXAM_MONTH = 7;
+    const int MATAM_EXAM_DAY = 28;
+    const double MATAM_EXAM_HOUR = 13.0;
+    const int MATAM_EXAM_LENGTH = 3;
+    const std::string MATAM_ZOOM_LINK = "https://tinyurl.com/59hzps6m";
+
     ExamDetails::ExamDetails(int course_number, int month, int day, double hour, int length, string link):
         course_number(course_number), 
         month(month), 
@@ -14,19 +26,21 @@ namespace mtm {
         length(length),
         hour(hour), 
         link(link) {
-        if (course_number < 1){
-            throw ExamDetails::InvalidArgsException();
-        }
-        if (month < 1 || month > 12){
+        if (month < 1 || month > MONTH_IN_YEAR){
             throw ExamDetails::InvalidDateException();
         }
-        if (day < 1 || day > 30){
+        if (day < 1 || day > DAYS_IN_MONTH){
             throw ExamDetails::InvalidDateException();
         }
         double diff = (hour - (int)hour);
-        if ((diff > 1e-6 && diff < (0.5 - 1e-6)) || (diff > (0.5 + 1e-6) && diff < (1 - 1e-6)) || 
-            hour < -1e-6 || (hour - 24.5) > 1e-6){
+        //checks if hour is round hour or half hour
+        if ((diff > DOUBLE_MARGIN_OF_ERROR && diff < (HALF_HOUR - DOUBLE_MARGIN_OF_ERROR)) || 
+            (diff > (HALF_HOUR + DOUBLE_MARGIN_OF_ERROR) && diff < (1 - DOUBLE_MARGIN_OF_ERROR)) || 
+            hour < -DOUBLE_MARGIN_OF_ERROR || (hour - (HOURS_IN_DAY + HALF_HOUR)) > DOUBLE_MARGIN_OF_ERROR){ 
             throw ExamDetails::InvalidTimeException();
+        }
+        if (length < 1){
+            throw ExamDetails::InvalidArgsException();
         }
     }
 
@@ -61,7 +75,7 @@ namespace mtm {
     }
 
     int ExamDetails::operator-(const ExamDetails& exam) const{
-        return 30*(month - exam.month) + (day - exam.day);  
+        return DAYS_IN_MONTH*(month - exam.month) + (day - exam.day);  
     }
 
     bool ExamDetails::operator<(const ExamDetails& exam) const{
@@ -70,14 +84,14 @@ namespace mtm {
 
     ostream& operator<<(ostream& os, const ExamDetails& exam){
         return (os << "Course Number: " << exam.course_number << std::endl << "Time: " << exam.day << "." << exam.month
-                << " at " << (int)exam.hour << ":" << 
-                (((exam.hour - (int)exam.hour < 1e-6) || (exam.hour - (int)exam.hour > (1 - 1e-6)))? "00" : "30") << 
-                std::endl << "Duration: " << exam.length << ":00" << std::endl << "Zoom Link: " << 
-                exam.link << std::endl);
+                << " at " << (int)exam.hour << ":" << (((exam.hour - (int)exam.hour < DOUBLE_MARGIN_OF_ERROR) || 
+                (exam.hour - (int)exam.hour > (1 - DOUBLE_MARGIN_OF_ERROR)))? "00" : "30") << std::endl << "Duration: " 
+                << exam.length << ":00" << std::endl << "Zoom Link: " << exam.link << std::endl);
     }
 
     ExamDetails ExamDetails::makeMatamExam(){
-        ExamDetails mtm_exam(234124, 7, 28, 13.0, 3, "https://tinyurl.com/59hzps6m");
+        ExamDetails mtm_exam(MATAM_COURSE_NUMBER, MATAM_EXAM_MONTH, MATAM_EXAM_DAY, MATAM_EXAM_HOUR, MATAM_EXAM_LENGTH, 
+                            MATAM_ZOOM_LINK);
         return mtm_exam;
     }
 }

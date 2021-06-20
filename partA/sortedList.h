@@ -171,14 +171,12 @@ namespace mtm{
         private:
             Node<T>* head_node;
             int size;
-            const_iterator iterator;
     };
 
     template <class T>
     SortedList<T>::SortedList() :
         head_node(nullptr), 
-        size(0),
-        iterator(head_node) {
+        size(0){
     }
 
     template <class T>
@@ -194,12 +192,11 @@ namespace mtm{
     template <class T>
     SortedList<T>::SortedList(const SortedList<T>& s) :
         head_node(nullptr),
-        size(0),
-        iterator (s.iterator) {
+        size(0){
         Node<T>* ptr = s.head_node;
         while(ptr){
             this->insert(ptr->getData());
-            ptr=ptr->getNext();
+            ptr = ptr->getNext();
         }
     }
 
@@ -208,20 +205,23 @@ namespace mtm{
         if (this == &s) {
             return *this;
         }
-        Node<T>* ptr = head_node;
+
+        SortedList<T> temp_list;
+        Node<T>* ptr = s.head_node;
+        while(ptr){
+            temp_list.insert(ptr->getData());
+            ptr = ptr->getNext();
+        }
+
+        ptr = head_node;
         while(ptr){
             head_node = ptr->getNext();
             delete ptr;
             ptr = head_node;
         }
-        iterator = s.iterator;
-        head_node = nullptr;
-        ptr = s.head_node;
-        while(ptr){
-            this->insert(ptr->getData());
-            ptr=ptr->getNext();
-        }
-        size=s.size;
+        
+        head_node = temp_list.head_node;
+        size = temp_list.size;
         return *this;
     }
 
@@ -251,27 +251,27 @@ namespace mtm{
 
     template <class T>
     void SortedList<T>::remove(const const_iterator& iter){
-        SortedList<T>::const_iterator it(this->begin());
-        if(it == this->end()){
+        SortedList<T>::const_iterator iterator(this->begin());
+        if(iterator == this->end()){
             return;
         }
-        if (iter==it)
+        if (iter == iterator)
         {
             head_node = head_node->getNext();
             delete iter.ptr;
             size--;
             return;
         }
-        Node<T>* ptr = head_node;
-        while(!(it == this->end())){
-            if(iter.ptr==it.ptr->getNext()){
+        Node<T>* ptr = head_node; 
+        while(!(iterator == this->end())){
+            if(iter.ptr == iterator.ptr->getNext()){
                 ptr->setNext(ptr->getNext()->getNext());
                 delete iter.ptr;
                 size--;
                 return;
             }
+            ++iterator;
             ptr = ptr->getNext();
-            it++;
         }
     }
 
@@ -284,9 +284,9 @@ namespace mtm{
     template<class Condition>
     SortedList<T> SortedList<T>::filter(Condition c) const {
         SortedList<T> result;
-        for (typename SortedList<T>::const_iterator it = begin(); !(it == end()); ++it) {
-            if (c(*it)) {
-                result.insert(*it);
+        for (typename SortedList<T>::const_iterator iterator = begin(); !(iterator == end()); ++iterator) {
+            if (c(*iterator)) {
+                result.insert(*iterator);
             }
         }
         return result;
@@ -296,8 +296,8 @@ namespace mtm{
     template<class Function>
     SortedList<T> SortedList<T>::apply(Function f) const {
         SortedList<T> result;
-        for (typename SortedList<T>::const_iterator it = begin(); !(it == end()); ++it) {
-            result.insert(f(*it));
+        for (typename SortedList<T>::const_iterator iterator = begin(); !(iterator == end()); ++iterator) {
+            result.insert(f(*iterator));
         }
         return result;
     }
