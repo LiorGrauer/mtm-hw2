@@ -17,8 +17,12 @@ namespace mtm{
         private:
             int hits_counter;
         public:
+
+            /** Sniper C'tor */
             Sniper(Team team, units_t health, units_t ammo, units_t range,units_t power) :
                 Character(team, health, ammo, range, power), hits_counter(0) {};
+
+            /** Sniper default D'tor */
             ~Sniper() = default;
 
             /**

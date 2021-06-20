@@ -11,11 +11,15 @@ namespace mtm{
     const int SOLDIER_INCIDENTAL_DAMAGE_RANGE_DIVIDER = 3;
     const int SOLDIER_INCIDENTAL_DAMAGE_DIVIDER = 2;
 
-    /** Soldier class declaration*/
+    /** Soldier class declaration */
     class Soldier : public Character {
         public:
+
+            /** Soldier C'tor*/
             Soldier(Team team, units_t health, units_t ammo, units_t range,units_t power) :
                 Character(team, health, ammo, range, power) {};
+
+            /** Soldier default D'tor */
             ~Soldier() = default;
 
             /**

@@ -32,11 +32,17 @@ namespace mtm {
             bool outOfBoard (const GridPoint& coordinates) const;
 
         public:
+
+            /** Game default C'tor*/
             Game(int height, int width);
 
             /** Game default D'tor*/
             ~Game() = default;
+
+            /** Game default Copy C'tor*/
             Game(const Game& other);
+
+            /** Game default Assignment C'tor*/
             Game& operator=(const Game& other);
 
             /**

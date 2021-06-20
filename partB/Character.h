@@ -15,11 +15,17 @@ namespace mtm{
             units_t health, ammo;
 
         public:
+
+            /** Character default C'tor */
             Character(Team team, units_t health, units_t ammo, units_t range ,units_t power);
+
+            /** Deleted Character default Assignment C'tor */
             Character& operator=(const Character& character) = delete;
+
+            /** Deleted Character default D'tor */
             Character(const Character& character) = default;
 
-            /** D'tor: virtual function that the specific Character type will override*/
+            /** D'tor: virtual function that the specific Character type will override */
             virtual ~Character() = default;
 
             /**
