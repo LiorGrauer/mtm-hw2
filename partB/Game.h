@@ -12,6 +12,8 @@
 #include <vector>
 
 namespace mtm {
+
+    /** Game class declaration*/
     class Game {
         private:
             int height;
