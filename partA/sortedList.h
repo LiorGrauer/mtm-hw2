@@ -221,6 +221,7 @@ namespace mtm{
         }
         
         head_node = temp_list.head_node;
+        temp_list.head_node = nullptr;
         size = temp_list.size;
         return *this;
     }
