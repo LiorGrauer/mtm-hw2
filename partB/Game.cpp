@@ -108,7 +108,7 @@ namespace mtm {
                 (occupied) ? board.at(dst_coordinates.row).at(dst_coordinates.col)->getTeam() : 
                 (board.at(src_coordinates.row).at(src_coordinates.col)->getTeam() == CROSSFITTERS) ? 
                 POWERLIFTERS : CROSSFITTERS))){
-                        //if dst is not occupied the team dosent affect the function
+                        //if dst is not occupied the team dosent effect the function
             return;
         }
         int incidential_range = board.at(src_coordinates.row).at(src_coordinates.col)->getIncidentalDamageRange();

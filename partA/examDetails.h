@@ -19,7 +19,7 @@ namespace mtm {
              * @param course_number - month. Must be type int
              * @param month - month. Must be type int
              * @param day - day. Must be type int
-             * @param hour - hour. Must be type double, only .0 or .5
+             * @param hour - hour. Must be type double, only .0 or .5 allowed
              * @param length - length. Must be type int
              * @param link - link. Must be type string
              *
