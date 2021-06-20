@@ -23,7 +23,9 @@ namespace mtm {
         if (day < 1 || day > 30){
             throw ExamDetails::InvalidDateException();
         }
-        if (((hour - (int)hour) > 1e-6 && (hour - 0.5 - (int)hour) > 1e-6) || hour < -1e-6 || (hour - 24.5) > 1e-6){
+        double diff = (hour - (int)hour);
+        if ((diff > 1e-6 && diff < (0.5 - 1e-6)) || (diff > (0.5 + 1e-6) && diff < (1 - 1e-6)) || 
+            hour < -1e-6 || (hour - 24.5) > 1e-6){
             throw ExamDetails::InvalidTimeException();
         }
     }
@@ -56,7 +58,6 @@ namespace mtm {
 
     void ExamDetails::setLink(string link){
         this->link = link;
-        //should i use old link destructor??
     }
 
     int ExamDetails::operator-(const ExamDetails& exam) const{
@@ -69,8 +70,10 @@ namespace mtm {
 
     ostream& operator<<(ostream& os, const ExamDetails& exam){
         return (os << "Course Number: " << exam.course_number << std::endl << "Time: " << exam.day << "." << exam.month
-                << " at " << (int)exam.hour << ":" << ((exam.hour - (int)exam.hour < 1e-6)? "00" : "30") << std::endl 
-                << "Duration: " << exam.length << ":00" << std::endl << "Zoom Link: " << exam.link << std::endl);
+                << " at " << (int)exam.hour << ":" << 
+                (((exam.hour - (int)exam.hour < 1e-6) || (exam.hour - (int)exam.hour > (1 - 1e-6)))? "00" : "30") << 
+                std::endl << "Duration: " << exam.length << ":00" << std::endl << "Zoom Link: " << 
+                exam.link << std::endl);
     }
 
     ExamDetails ExamDetails::makeMatamExam(){
