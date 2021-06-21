@@ -103,6 +103,7 @@ namespace mtm {
             throw CellEmpty();
         }
         bool occupied = board.at(dst_coordinates.row).at(dst_coordinates.col) == nullptr ? false : true;
+        //checks if the attack is impossible according to the character abbilities:
         if(!(board.at(src_coordinates.row).at(src_coordinates.col)->
                 checkAttack(src_coordinates, dst_coordinates, occupied, 
                 (occupied) ? board.at(dst_coordinates.row).at(dst_coordinates.col)->getTeam() : 
@@ -112,13 +113,16 @@ namespace mtm {
             return;
         }
         int incidential_range = board.at(src_coordinates.row).at(src_coordinates.col)->getIncidentalDamageRange();
+        // loops for making incidential damage:
         for(int i=incidential_range; i >= -incidential_range; i--){
             for(int j=incidential_range; j >= -incidential_range; j--){
                 if(outOfBoard(GridPoint(dst_coordinates.row+i,dst_coordinates.col+j)) || 
                    (GridPoint::distance(GridPoint(dst_coordinates.row+i,dst_coordinates.col+j), dst_coordinates)
                    > incidential_range || (board.at(dst_coordinates.row+i).at(dst_coordinates.col+j) == nullptr))){
+                // out of board, or outside the character range, or empty cell
                     continue;
                 }
+                //make the attack:
                 board.at(dst_coordinates.row+i).at(dst_coordinates.col+j)->
                 changeHealth(board.at(src_coordinates.row).at(src_coordinates.col)->
                 executeAttack(GridPoint(dst_coordinates.row,dst_coordinates.col),
