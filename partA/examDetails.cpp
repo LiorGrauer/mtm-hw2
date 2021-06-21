@@ -36,7 +36,7 @@ namespace mtm {
         //checks if hour is round hour or half hour
         if ((diff > DOUBLE_MARGIN_OF_ERROR && diff < (HALF_HOUR - DOUBLE_MARGIN_OF_ERROR)) || 
             (diff > (HALF_HOUR + DOUBLE_MARGIN_OF_ERROR) && diff < (1 - DOUBLE_MARGIN_OF_ERROR)) || 
-            hour < -DOUBLE_MARGIN_OF_ERROR || (hour - (HOURS_IN_DAY + HALF_HOUR)) > DOUBLE_MARGIN_OF_ERROR){ 
+            hour < -DOUBLE_MARGIN_OF_ERROR || (hour - (HOURS_IN_DAY - HALF_HOUR)) > DOUBLE_MARGIN_OF_ERROR){ 
             throw ExamDetails::InvalidTimeException();
         }
         if (length < 1){
