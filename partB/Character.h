@@ -22,7 +22,7 @@ namespace mtm{
             /** Deleted Character default Assignment C'tor */
             Character& operator=(const Character& character) = delete;
 
-            /** Deleted Character default D'tor */
+            /** Character default D'tor */
             Character(const Character& character) = default;
 
             /** D'tor: virtual function that the specific Character type will override */

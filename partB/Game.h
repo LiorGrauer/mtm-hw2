@@ -4,7 +4,6 @@
 #include "./Auxiliaries.h"
 #include "./Exceptions.h"
 #include "./Character.h"
-//needed?
 #include "./Medic.h"
 #include "./Soldier.h"
 #include "./Sniper.h"
@@ -24,7 +23,7 @@ namespace mtm {
              * outOfBoard: check if recived GridPoint is in the board.
              *
              * @param coordinates - the coordinates of the checked grid point.
-             *              *
+             *              
              * @return
              *     true if the gridpoint is out of the board
              *     false if it is inside the board

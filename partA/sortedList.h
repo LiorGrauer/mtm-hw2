@@ -27,6 +27,9 @@ namespace mtm{
         //default destructer
         ~Node() = default;
 
+        /** Deleted Character default D'tor */
+        Node(const Node& node) = delete;
+
         /**
          * getData: returns data in node
          *
