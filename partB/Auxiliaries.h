@@ -18,7 +18,7 @@ namespace mtm {
     struct GridPoint {
         int row, col;
 
-        GridPoint(int row, int col) : row(row), col(col) {}
+        GridPoint(int row, int col) : row(row), col(col) {} 
 
         GridPoint(const GridPoint &other) = default;
 
